@@ -11,14 +11,15 @@ protocol JokeGenerateProtocol : NSObjectProtocol {
     
     func successJoke(viewModel:JokeModel.ViewModel)
     func errorJoke(viewModel: Any)
-    
-    
+    func shareJoke(chosenJoke : UIActivityViewController)
+
 }
 
 class JokeGenerateController: UIViewController, JokeGenerateProtocol {
     
     var interactor : JokeGenerateInteractorProtocol?
     var router : (NSObjectProtocol&JokeGenerateRouterProtocol)?
+    var tempJoke : Joke?
     
         
     @IBOutlet weak var jokeLabel: UILabel!
@@ -48,13 +49,18 @@ class JokeGenerateController: UIViewController, JokeGenerateProtocol {
     
     func successJoke(viewModel: JokeModel.ViewModel) {
         //TODO
-        jokeLabel.text = viewModel.joke?.joke
+        tempJoke = viewModel.joke
+        jokeLabel.text = tempJoke?.joke ?? " nil"
         print("yeay \(String(describing: viewModel.joke)) ooo")
         
     }
     
     func errorJoke(viewModel: Any) {
         //TODO
+    }
+    func shareJoke(chosenJoke : UIActivityViewController) {
+        //
+        present(chosenJoke, animated: true, completion: nil)
     }
 
     @IBAction func refreshButtonClicked(_ sender: Any) {
@@ -65,8 +71,9 @@ class JokeGenerateController: UIViewController, JokeGenerateProtocol {
     
     @IBAction func shareButtonClicked(_ sender: Any) {
         //TODO
-        interactor?.shareJoke()
+        interactor?.shareJoke(choosenJoke: tempJoke! )
     }
     
 }
+
 

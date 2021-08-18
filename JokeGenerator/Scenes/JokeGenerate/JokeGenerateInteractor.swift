@@ -6,13 +6,15 @@
 //
 
 import Foundation
+import UIKit
 
 
 protocol JokeGenerateInteractorProtocol {
     //
     func jokeRequestInitiated(request: Any)
-    func shareJoke()
     func refresh()
+    func shareJoke(choosenJoke : Joke)
+    
     
 }
 
@@ -31,8 +33,12 @@ class JokeGenerateInteractor : JokeGenerateInteractorProtocol {
         
     }
     
-    func shareJoke() {
+    func shareJoke(choosenJoke : Joke) {
         //TODO
+        let activityCont = UIActivityViewController(activityItems: [choosenJoke.joke], applicationActivities: nil)
+        presenter?.presentShare(share: activityCont, jokeObj: choosenJoke)
+       
+        
        
     }
     

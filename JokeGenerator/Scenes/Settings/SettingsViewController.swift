@@ -30,19 +30,19 @@ class SettingsViewController: UIViewController, SettingsProtocol {
         //
     }
     func selectCategories() {
-        <#code#>
+//        <#code#>
     }
     
     func selectThemes() {
-        <#code#>
+//        <#code#>
     }
     
     func notification() {
-        <#code#>
+//        <#code#>
     }
     
     func rateUs() {
-        <#code#>
+//        <#code#>
     }
     
 //    func categoryClicked(){

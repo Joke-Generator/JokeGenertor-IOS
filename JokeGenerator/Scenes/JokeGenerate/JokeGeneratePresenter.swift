@@ -6,11 +6,12 @@
 //
 
 import Foundation
+import UIKit
 
 protocol JokeGeneratePresenterProtocol {
     func presentJoke(response: JokeModel.Response)
+    func presentShare(share : UIActivityViewController, jokeObj: Joke)
     
-    //
 }
 
 class JokeGeneratePresenter: JokeGeneratePresenterProtocol {
@@ -23,6 +24,11 @@ class JokeGeneratePresenter: JokeGeneratePresenterProtocol {
         let viewModel = JokeModel.ViewModel(joke: response.jokeObj)
         
         viewController?.successJoke(viewModel: viewModel)
+        
+    }
+    func presentShare(share : UIActivityViewController, jokeObj: Joke) {
+        
+        viewController?.shareJoke(chosenJoke: share)
         
     }
 }

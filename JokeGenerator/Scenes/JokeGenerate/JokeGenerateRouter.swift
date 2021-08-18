@@ -8,7 +8,7 @@
 import Foundation
 
 protocol JokeGenerateRouterProtocol{
-    changeView()
+    func changeView()
 }
 
 class  JokeGenerateRouter : NSObject, JokeGenerateRouterProtocol {
