@@ -17,6 +17,6 @@ class  JokeGenerateRouter : NSObject, JokeGenerateRouterProtocol {
     //
     var viewController: JokeGenerateController?
     func changeView() {
-        //
+        //yeay
     }
 }
