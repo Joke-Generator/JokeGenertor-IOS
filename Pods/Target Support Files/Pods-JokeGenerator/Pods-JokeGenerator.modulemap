@@ -1,0 +1,6 @@
+framework module Pods_JokeGenerator {
+  umbrella header "Pods-JokeGenerator-umbrella.h"
+
+  export *
+  module * { export * }
+}
