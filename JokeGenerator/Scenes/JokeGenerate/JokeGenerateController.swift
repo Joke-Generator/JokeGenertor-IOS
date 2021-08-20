@@ -6,12 +6,15 @@
 //
 
 import UIKit
+import SideMenu
 
 protocol JokeGenerateProtocol : NSObjectProtocol {
     
     func successJoke(viewModel:JokeModel.ViewModel)
     func errorJoke(viewModel: Any)
     func shareJoke(chosenJoke : UIActivityViewController)
+    func toSettings(menu: SideMenuNavigationController)
+    
 
 }
 
@@ -32,6 +35,8 @@ class JokeGenerateController: UIViewController, JokeGenerateProtocol {
         // Do any additional setup after loading the view.
     }
     
+   
+    
     func setup(){
         let viewController = self
         let interactor = JokeGenerateInteractor()
@@ -49,8 +54,14 @@ class JokeGenerateController: UIViewController, JokeGenerateProtocol {
     
     func successJoke(viewModel: JokeModel.ViewModel) {
         //TODO
-        tempJoke = viewModel.joke
-        jokeLabel.text = tempJoke?.joke ?? " nil"
+        tempJoke = viewModel.joke!
+        print(tempJoke?.joke)
+        if let fun = tempJoke?.joke
+        {
+            jokeLabel.text = fun
+        }
+        
+        
         print("yeay \(String(describing: viewModel.joke)) ooo")
         
     }
@@ -58,9 +69,14 @@ class JokeGenerateController: UIViewController, JokeGenerateProtocol {
     func errorJoke(viewModel: Any) {
         //TODO
     }
+    func toSettings(menu: SideMenuNavigationController) {
+        present(menu, animated: true, completion: nil)
+        
+    }
     func shareJoke(chosenJoke : UIActivityViewController) {
         //
         present(chosenJoke, animated: true, completion: nil)
+      
     }
 
     @IBAction func refreshButtonClicked(_ sender: Any) {
@@ -73,6 +89,12 @@ class JokeGenerateController: UIViewController, JokeGenerateProtocol {
         //TODO
         interactor?.shareJoke(choosenJoke: tempJoke! )
     }
+    
+    @IBAction func toGoSettingsClicked(_ sender: Any) {
+        //present(JokeGenerateRouter.toSettings(<#T##self: JokeGenerateRouter##JokeGenerateRouter#>), animated: true, completion: nil)
+        router?.toSettings()
+    }
+    
     
 }
 

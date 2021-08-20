@@ -7,10 +7,12 @@
 
 import Foundation
 import UIKit
+import SideMenu
 
 protocol JokeGeneratePresenterProtocol {
     func presentJoke(response: JokeModel.Response)
     func presentShare(share : UIActivityViewController, jokeObj: Joke)
+    //func presentToSettings(menu: SideMenuNavigationController)
     
 }
 
@@ -31,4 +33,6 @@ class JokeGeneratePresenter: JokeGeneratePresenterProtocol {
         viewController?.shareJoke(chosenJoke: share)
         
     }
+    
+    
 }
