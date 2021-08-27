@@ -43,6 +43,7 @@ class JokeGenerateController: UIViewController, JokeGenerateProtocol {
         let presenter = JokeGeneratePresenter()
         let router = JokeGenerateRouter()
         
+        //viewController.interactor = interactor
         viewController.interactor = interactor
         viewController.router = router
         interactor.presenter = presenter

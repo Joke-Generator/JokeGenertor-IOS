@@ -52,7 +52,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="crC-nr-lj8">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="MLA-KC-tWQ">
+                        <barButtonItem key="rightBarButtonItem" title="..." id="MLA-KC-tWQ" colorLabel="IBBuiltInLabel-Gray">
+                            <color key="tintColor" systemColor="labelColor"/>
                             <connections>
                                 <action selector="toGoSettingsClicked:" destination="BYZ-38-t0r" id="vF5-hf-6XX"/>
                             </connections>
@@ -86,6 +87,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
