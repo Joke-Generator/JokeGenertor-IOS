@@ -17,18 +17,11 @@ protocol SettingsProtocol {
     func rateUs()
 }
 
-class SettingsViewController: UIViewController, SettingsProtocol {
+class SettingsViewController: UITableViewController,SettingsProtocol{
     
+    var interactor : SettingsInteractorProtocol?
+    var router : SettingsRouterProtocol?
     
-//    func eventClicked(option: SettingOptions) {
-//        <#code#>
-//    }
-    
-    
-    //
-    override func viewDidLoad() {
-        //
-    }
     func selectCategories() {
 //        <#code#>
     }
@@ -44,8 +37,68 @@ class SettingsViewController: UIViewController, SettingsProtocol {
     func rateUs() {
 //        <#code#>
     }
+    func setup(){
+        let viewController = self
+        let interactor = SettingsInteractor()
+        let presenter = SettingsPresenter()
+        let router = SettingsRouter()
+        
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+    }
     
-//    func categoryClicked(){
-//        eventClicked(option: SettingOptions.categories)
-//    }
+   
+   var  sections = [
+       Section(title: "Categories ", options: ["Misc","Programming","Dark","Pun","Spooky","Christmas"].compactMap({return " \($0)"})),
+    Section(title: "Themes ", options: [].compactMap({return "Cell \($0)"})),
+       Section(title: "Notifications ", options: [].compactMap({return "Cell \($0)"})),
+    Section(title: "Rate Us", options: [].compactMap({return "Cell \($0)"})),
+   ]
+    
+    override func viewDidLoad() {
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+    }
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let section = sections[section]
+        
+        if section.isOpened{
+            return section.options.count+1
+        }
+        else{
+            return 1
+        }
+    }
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return sections.count
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+       
+        if indexPath.row == 0  {
+            sections[indexPath.section].isOpened = !sections[indexPath.section].isOpened
+            tableView.reloadSections([indexPath.section], with: .none)
+        }
+        else
+        {
+            
+        }
+    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        if indexPath.row == 0
+        {
+            cell.textLabel?.text = sections[indexPath.section].title
+            cell.backgroundColor = .systemRed
+        }
+        else{
+            cell.textLabel?.text = sections[indexPath.section].options[indexPath.row-1]
+            cell.backgroundColor = .cyan
+        }
+        
+        return cell
+    }
 }

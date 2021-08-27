@@ -14,9 +14,11 @@ protocol SettingsRouterProtocol {
 
 class SettingsRouter : SettingsRouterProtocol {
     
+    var presenter : SettingsPresenterProtocol?
+    var viewController : SettingsViewController?
+    
     func toJokeGenerate(){
         //to main view
+        
     }
-
-    //
 }

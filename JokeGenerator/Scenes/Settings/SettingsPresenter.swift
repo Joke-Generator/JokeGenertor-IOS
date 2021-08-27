@@ -13,6 +13,9 @@ protocol SettingsPresenterProtocol {
 }
 
 class SettingsPresenter: SettingsPresenterProtocol {
+    
+    var viewController : SettingsProtocol?
+    
     func presentSettings() {
 //        <#code#>
     }

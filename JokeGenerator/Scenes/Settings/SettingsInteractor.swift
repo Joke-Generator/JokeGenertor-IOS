@@ -18,6 +18,11 @@ protocol SettingsInteractorProtocol {
 }
 
 class SettingsInteractor : SettingsInteractorProtocol{
+    
+    var presenter : SettingsPresenterProtocol?
+    var worker : SettingsWorkerProtocol?
+    
+    
     func selectCategories() {
         //
     }
