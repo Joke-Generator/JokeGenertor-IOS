@@ -14,6 +14,7 @@ protocol JokeGenerateProtocol : NSObjectProtocol {
     func errorJoke(viewModel: Any)
     func shareJoke(chosenJoke : UIActivityViewController)
     func toSettings(menu: SideMenuNavigationController)
+    func showRandomImage(imageName : String)
     
 
 }
@@ -27,10 +28,13 @@ class JokeGenerateController: UIViewController, JokeGenerateProtocol {
         
     @IBOutlet weak var jokeLabel: UILabel!
     
+    @IBOutlet weak var jokeImageViewController: UIImageView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        
 //        JokeGenerateWorker().fetch()
         // Do any additional setup after loading the view.
     }
@@ -50,13 +54,14 @@ class JokeGenerateController: UIViewController, JokeGenerateProtocol {
         presenter.viewController = viewController
         router.viewController = viewController
         interactor.refresh()
+        interactor.randomSelectImage()
      
     }
     
     func successJoke(viewModel: JokeModel.ViewModel) {
         //TODO
         tempJoke = viewModel.joke!
-        print(tempJoke?.joke)
+        //print(tempJoke?.joke)
         if let fun = tempJoke?.joke
         {
             jokeLabel.text = fun
@@ -79,10 +84,18 @@ class JokeGenerateController: UIViewController, JokeGenerateProtocol {
         present(chosenJoke, animated: true, completion: nil)
       
     }
+    func showRandomImage(imageName: String) {
+        //present(<#T##viewControllerToPresent: UIViewController##UIViewController#>, animated: <#T##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
+        jokeImageViewController.image = UIImage(named: imageName)
+        print(imageName)
+        print("$$$$")
+
+    }
 
     @IBAction func refreshButtonClicked(_ sender: Any) {
         //TODO
         interactor?.refresh()
+        interactor?.randomSelectImage()
     }
     
     

@@ -59,7 +59,9 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
    ]
     
     override func viewDidLoad() {
+        
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        setup()
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let section = sections[section]
