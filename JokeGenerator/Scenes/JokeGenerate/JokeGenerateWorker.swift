@@ -16,37 +16,26 @@ class JokeGenerateWorker  {
         
         var request = URLRequest(url: URL(string: "https://v2.jokeapi.dev/joke/Programming,Miscellaneous,Dark,Pun,Spooky,Christmas?type=single")!,timeoutInterval: Double.infinity)
         request.httpMethod = "GET"
-        
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data else {
                 print(String(describing: error))
                 return
             }
+            
+            var joke : Joke
+            //                print(String(data: data, encoding: .utf8)!)
             do{
-                var joke : Joke
-//                print(String(data: data, encoding: .utf8)!)
-                do{
-                    joke  = try JSONDecoder().decode(Joke.self, from : data)
-                    print(joke.joke)
-                    
-                    temp = joke
-                }catch{
-                    print(error)
-                }
-                //                print(joke.joke)
-                print("yeay")
-                
-                
-                
+                joke  = try JSONDecoder().decode(Joke.self, from : data)
+                temp = joke
             }catch{
-                print(error.localizedDescription)
+                print(error)
             }
+            
             semaphore.signal()
         }
-        
         task.resume()
         semaphore.wait()
-        print(" \(String(describing: temp?.joke)) buuuuu ")
+        
         return temp!
     }
 }

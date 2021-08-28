@@ -13,7 +13,7 @@ protocol SettingsProtocol {
     //    func eventClicked(option : SettingOptions)
     func selectCategories()
     func selectThemes()
-    func notification()
+    func notification(alert : UIAlertController)
     func rateUs()
 }
 
@@ -56,8 +56,9 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
         //        <#code#>
     }
     
-    func notification() {
-        //        <#code#>
+    func notification(alert : UIAlertController) {
+       present(alert, animated: true, completion: nil)
+        
     }
     
     func rateUs() {
@@ -84,6 +85,7 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
         
         
         if indexPath.row == 0  {
+            self.interactor?.notification(option: "padawan")
             sections[indexPath.section].isOpened = !sections[indexPath.section].isOpened
             tableView.reloadSections([indexPath.section], with: .none)
             switch indexPath.section {
@@ -93,6 +95,7 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
                 print("Themes selected")
             case 2:
                 print("Notification selected")
+                
             case 3:
                 print("Rate us selected")
             default:

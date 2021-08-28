@@ -35,8 +35,6 @@ class JokeGenerateController: UIViewController, JokeGenerateProtocol {
         super.viewDidLoad()
         setup()
         
-//        JokeGenerateWorker().fetch()
-        // Do any additional setup after loading the view.
     }
     
    
@@ -47,7 +45,6 @@ class JokeGenerateController: UIViewController, JokeGenerateProtocol {
         let presenter = JokeGeneratePresenter()
         let router = JokeGenerateRouter()
         
-        //viewController.interactor = interactor
         viewController.interactor = interactor
         viewController.router = router
         interactor.presenter = presenter
@@ -61,15 +58,10 @@ class JokeGenerateController: UIViewController, JokeGenerateProtocol {
     func successJoke(viewModel: JokeModel.ViewModel) {
         //TODO
         tempJoke = viewModel.joke!
-        //print(tempJoke?.joke)
         if let fun = tempJoke?.joke
         {
             jokeLabel.text = fun
         }
-        
-        
-        print("yeay \(String(describing: viewModel.joke)) ooo")
-        
     }
     
     func errorJoke(viewModel: Any) {
@@ -85,11 +77,8 @@ class JokeGenerateController: UIViewController, JokeGenerateProtocol {
       
     }
     func showRandomImage(imageName: String) {
-        //present(<#T##viewControllerToPresent: UIViewController##UIViewController#>, animated: <#T##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
         jokeImageViewController.image = UIImage(named: imageName)
-        print(imageName)
-        print("$$$$")
-
+        
     }
 
     @IBAction func refreshButtonClicked(_ sender: Any) {
@@ -105,7 +94,6 @@ class JokeGenerateController: UIViewController, JokeGenerateProtocol {
     }
     
     @IBAction func toGoSettingsClicked(_ sender: Any) {
-        //present(JokeGenerateRouter.toSettings(<#T##self: JokeGenerateRouter##JokeGenerateRouter#>), animated: true, completion: nil)
         router?.toSettings()
     }
     
