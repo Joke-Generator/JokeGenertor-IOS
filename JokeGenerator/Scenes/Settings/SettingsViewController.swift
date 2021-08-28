@@ -95,7 +95,7 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
                 print("Themes selected")
             case 2:
                 print("Notification selected")
-                
+                self.interactor?.notification(option: "padawan")
             case 3:
                 print("Rate us selected")
             default:
