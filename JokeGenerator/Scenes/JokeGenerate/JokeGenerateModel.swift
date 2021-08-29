@@ -9,10 +9,10 @@ import Foundation
 
 struct JokeModel {
     struct Response {
-        var jokeObj : Joke?
+        var jokeObj : JokeSingle?
     }
     struct ViewModel {
-        var joke : Joke?
+        var joke : JokeSingle?
     }
 }
 

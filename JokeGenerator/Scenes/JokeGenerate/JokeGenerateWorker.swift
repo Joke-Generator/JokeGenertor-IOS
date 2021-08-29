@@ -10,8 +10,8 @@ import Foundation
 
 class JokeGenerateWorker  {
     
-    func fetch() -> Joke{
-        var temp : Joke? = nil
+    func fetch() -> JokeSingle{
+        var temp : JokeSingle? = nil
         let semaphore = DispatchSemaphore (value: 0)
         
         var request = URLRequest(url: URL(string: "https://v2.jokeapi.dev/joke/Programming,Miscellaneous,Dark,Pun,Spooky,Christmas?type=single")!,timeoutInterval: Double.infinity)
@@ -22,10 +22,10 @@ class JokeGenerateWorker  {
                 return
             }
             
-            var joke : Joke
+            var joke : JokeSingle
             //                print(String(data: data, encoding: .utf8)!)
             do{
-                joke  = try JSONDecoder().decode(Joke.self, from : data)
+                joke  = try JSONDecoder().decode(JokeSingle.self, from : data)
                 temp = joke
             }catch{
                 print(error)
