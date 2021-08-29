@@ -12,9 +12,7 @@ import SideMenu
 protocol JokeGeneratePresenterProtocol {
     func presentJoke(response: JokeModel.Response)
     func presentShare(share : UIActivityViewController, jokeObj: Joke)
-    func presentRandomImage(imageName: String)
-    //func presentToSettings(menu: SideMenuNavigationController)
-    
+    func presentRandomImage(imageName: String)    
 }
 
 class JokeGeneratePresenter: JokeGeneratePresenterProtocol {

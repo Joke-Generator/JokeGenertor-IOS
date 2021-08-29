@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import UIKit
 
 protocol SettingsPresenterProtocol {
     //
     func presentSettings()
+    func presentNotification(title : String, message : String)
 }
 
 class SettingsPresenter: SettingsPresenterProtocol {
@@ -18,6 +20,11 @@ class SettingsPresenter: SettingsPresenterProtocol {
     
     func presentSettings() {
 //        <#code#>
+    }
+    func presentNotification(title : String, message : String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        viewController?.notification(alert: alert)
     }
     
     //

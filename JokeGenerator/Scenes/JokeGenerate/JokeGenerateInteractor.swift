@@ -37,7 +37,6 @@ class JokeGenerateInteractor : JokeGenerateInteractorProtocol {
         //TODO
         
         let image = ["tongueMonkey","smileEmoji","shrek","monkey","handClown","garfieldAndDog","funnyDog","duck","donkey","cow","cockerel","clown","capHorse","banana","baby","absurtDog"]
-       // print(image.randomElement()!)
         presenter?.presentRandomImage(imageName: image.randomElement()!)
         
         
@@ -58,10 +57,6 @@ class JokeGenerateInteractor : JokeGenerateInteractorProtocol {
         //TODO
         let obj = JokeGenerateWorker().fetch()
         self.presenter?.presentJoke(response: JokeModel.Response(jokeObj: obj ) )
-        
-        print("wubba lubba")
-        print(obj)
-        print("dub dub")
     }
     
 
