@@ -9,10 +9,15 @@ import Foundation
 
 struct JokeModel {
     struct Response {
-        var jokeObj : Joke?
+        var jokeObj : GeneralJoke?
     }
     struct ViewModel {
-        var joke : Joke?
+        var joke : GeneralJoke?
     }
+}
+
+enum JokeType : String {
+    case single = "single"
+    case twoPart = "twopart"
 }
 

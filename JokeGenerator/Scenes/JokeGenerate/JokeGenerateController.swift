@@ -23,7 +23,7 @@ class JokeGenerateController: UIViewController, JokeGenerateProtocol {
     
     var interactor : JokeGenerateInteractorProtocol?
     var router : (NSObjectProtocol&JokeGenerateRouterProtocol)?
-    var tempJoke : Joke?
+    var tempJoke : GeneralJoke?
     
         
     @IBOutlet weak var jokeLabel: UILabel!

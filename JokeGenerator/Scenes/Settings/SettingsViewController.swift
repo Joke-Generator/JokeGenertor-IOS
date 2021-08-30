@@ -23,7 +23,7 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
     var router : SettingsRouterProtocol?
     
     var  sections = [
-        Section(title: "Categories ", options: ["Misc","Programming","Dark","Pun","Spooky","Christmas"].compactMap({return " \($0)"})),
+        Section(title: "Categories ", options: ["Any","Misc","Programming","Dark","Pun","Spooky","Christmas"].compactMap({return " \($0)"})),
         Section(title: "Themes ", options: [].compactMap({return "Cell \($0)"})),
         Section(title: "Notifications ", options: ["Once a day","Off","Custom"].compactMap({return "\($0)"})),
         Section(title: "Rate Us", options: [].compactMap({return "Cell \($0)"})),
