@@ -13,7 +13,7 @@ protocol JokeGenerateInteractorProtocol {
     //
     func jokeRequestInitiated(request: Any)
     func refresh()
-    func shareJoke(choosenJoke : JokeSingle)
+    func shareJoke(choosenJoke : GeneralJoke)
     func randomSelectImage()
     
     
@@ -44,7 +44,7 @@ class JokeGenerateInteractor : JokeGenerateInteractorProtocol {
         
     }
     
-    func shareJoke(choosenJoke : JokeSingle) {
+    func shareJoke(choosenJoke : GeneralJoke) {
         //TODO
         let activityCont = UIActivityViewController(activityItems: [choosenJoke.joke], applicationActivities: nil)
         presenter?.presentShare(share: activityCont, jokeObj: choosenJoke)

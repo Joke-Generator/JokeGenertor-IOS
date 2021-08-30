@@ -25,6 +25,11 @@ struct JokeTwoPart: Codable {
     let lang: String
 }
 
+struct GeneralJoke : Codable {
+    let joke : String
+    let category : String
+}
+
 // MARK: - Flags
 struct Flags: Codable {
     let nsfw, religious, political, racist: Bool
