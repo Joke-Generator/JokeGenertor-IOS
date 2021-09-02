@@ -84,6 +84,25 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
         tableView.deselectRow(at: indexPath, animated: true)
         
         
+        if let cell = tableView.cellForRow(at: indexPath) {
+                
+            if indexPath.row != 0
+            {
+                if cell.accessoryType.self == .checkmark
+                {
+                    cell.accessoryType.self  = .none
+                    //print("gel vatandas")
+                }
+                else if cell.accessoryType.self == .none
+                {
+                    cell.accessoryType.self = .checkmark
+                   // print("burada tik islem' yapiliyor ")
+                }
+                
+            }
+            
+            }
+        
         if indexPath.row == 0  {
             self.interactor?.notification(option: "padawan")
             sections[indexPath.section].isOpened = !sections[indexPath.section].isOpened
@@ -106,7 +125,6 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
         {
         }
     }
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         if indexPath.row == 0
