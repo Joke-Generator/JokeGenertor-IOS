@@ -7,8 +7,12 @@
 
 import Foundation
 import UIKit
+import mtpThemeManager
+
+
 
 protocol SettingsProtocol {
+    
     //
 //    func eventClicked(option : SettingOptions)
     func selectCategories()
@@ -34,7 +38,7 @@ class SettingsViewController: UIViewController, SettingsProtocol {
     }
     
     func selectThemes() {
-//        <#code#>
+        
     }
     
     func notification() {
@@ -48,4 +52,5 @@ class SettingsViewController: UIViewController, SettingsProtocol {
 //    func categoryClicked(){
 //        eventClicked(option: SettingOptions.categories)
 //    }
+    
 }

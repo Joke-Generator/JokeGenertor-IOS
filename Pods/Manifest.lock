@@ -1,16 +1,24 @@
 PODS:
+  - Alamofire (5.4.3)
+  - mtpThemeManager (1.0.7)
   - SideMenu (6.5.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 5.4)
+  - mtpThemeManager
   - SideMenu
 
 SPEC REPOS:
   trunk:
+    - Alamofire
+    - mtpThemeManager
     - SideMenu
 
 SPEC CHECKSUMS:
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  mtpThemeManager: 9817460abd1c3071832f8df60b0ea7ae535d63cf
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
 
-PODFILE CHECKSUM: e1e868d3faca7c7c1be268a05702e141ac9abfa8
+PODFILE CHECKSUM: f65d97e5560e7c0d385b30d86a0c1cfb7a86669c
 
 COCOAPODS: 1.10.1

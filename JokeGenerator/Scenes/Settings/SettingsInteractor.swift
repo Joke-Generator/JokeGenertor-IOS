@@ -23,7 +23,9 @@ class SettingsInteractor : SettingsInteractorProtocol{
     }
     
     func selectThemes() {
-//        <#code#>
+        
+        
+
     }
     
     func notification() {

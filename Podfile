@@ -6,5 +6,9 @@ target 'JokeGenerator' do
   use_frameworks!
 
 pod 'SideMenu'
+pod 'mtpThemeManager'
+pod 'Alamofire', '~> 5.4'
+
+use_frameworks!
 
 end
