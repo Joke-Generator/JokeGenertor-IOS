@@ -1,12 +1,11 @@
-//
+
 //  JokeGenerateWorker.swift
 //  JokeGenerator
 //
 //  Created by Furkan Kaan Ugsuz on 16/08/2021.
 //
-
 import Foundation
-
+import Alamofire
 
 class JokeGenerateWorker  {
     
@@ -60,4 +59,3 @@ class JokeGenerateWorker  {
         return temp!
     }
 }
-
