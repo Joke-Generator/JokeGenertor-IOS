@@ -12,6 +12,7 @@ protocol SettingsPresenterProtocol {
     //
     func presentSettings()
     func presentNotification(title : String, message : String)
+    func presentTheme(theme:UIImage)
 }
 
 class SettingsPresenter: SettingsPresenterProtocol {
@@ -25,6 +26,10 @@ class SettingsPresenter: SettingsPresenterProtocol {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         viewController?.notification(alert: alert)
+    }
+    func presentTheme(theme:UIImage){
+        let backgroundImage = UIImage()
+        viewController?.selectThemes(theme: theme)
     }
     
     //

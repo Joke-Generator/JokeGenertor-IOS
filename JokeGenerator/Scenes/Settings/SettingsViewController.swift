@@ -12,7 +12,7 @@ protocol SettingsProtocol {
     //
     //    func eventClicked(option : SettingOptions)
     func selectCategories()
-    func selectThemes()
+    func selectThemes(theme:UIImage)
     func notification(alert : UIAlertController)
     func rateUs()
 }
@@ -52,10 +52,9 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
         //        <#code#>
     }
     
-    func selectThemes() {
-        //        <#code#>
+    func selectThemes(theme:UIImage) {
+        
     }
-    
     func notification(alert : UIAlertController) {
        present(alert, animated: true, completion: nil)
         

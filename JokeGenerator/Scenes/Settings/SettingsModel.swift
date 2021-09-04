@@ -50,8 +50,8 @@ class Section{
 
 enum Themes
 {
-    case Yellow
-    case Blue
+    case Dark
+    case Light
     case Black
     case Green
     case AddOther

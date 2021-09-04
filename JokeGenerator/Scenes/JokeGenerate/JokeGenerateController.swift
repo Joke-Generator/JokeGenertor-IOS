@@ -30,6 +30,7 @@ class JokeGenerateController: UIViewController, JokeGenerateProtocol {
     
     @IBOutlet weak var jokeImageViewController: UIImageView!
     
+    @IBOutlet weak var backGroundImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
