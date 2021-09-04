@@ -18,6 +18,8 @@ protocol SettingsPresenterProtocol {
 class SettingsPresenter: SettingsPresenterProtocol {
     
     var viewController : SettingsProtocol?
+    var controller: JokeGenerateProtocol?
+
     
     func presentSettings() {
 //        <#code#>
@@ -28,8 +30,8 @@ class SettingsPresenter: SettingsPresenterProtocol {
         viewController?.notification(alert: alert)
     }
     func presentTheme(theme:UIImage){
-        let backgroundImage = UIImage()
-        viewController?.selectThemes(theme: theme)
+        //let backgroundImage = UIImage()
+        //controller?.changeBackground(theme: theme)
     }
     
     //

@@ -15,6 +15,7 @@ protocol JokeGenerateProtocol : NSObjectProtocol {
     func shareJoke(chosenJoke : UIActivityViewController)
     func toSettings(menu: SideMenuNavigationController)
     func showRandomImage(imageName : String)
+    func changeBackground(theme:UIImage)
     
 
 }
@@ -46,6 +47,7 @@ class JokeGenerateController: UIViewController, JokeGenerateProtocol {
         let presenter = JokeGeneratePresenter()
         let router = JokeGenerateRouter()
         
+        
         viewController.interactor = interactor
         viewController.router = router
         interactor.presenter = presenter
@@ -54,6 +56,11 @@ class JokeGenerateController: UIViewController, JokeGenerateProtocol {
         interactor.refresh()
         interactor.randomSelectImage()
      
+    }
+    
+    func changeBackground(theme:UIImage){
+        backGroundImage.image = theme
+        print("selam")
     }
     
     func successJoke(viewModel: JokeModel.ViewModel) {

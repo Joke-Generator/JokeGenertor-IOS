@@ -14,7 +14,7 @@ import UIKit
 protocol SettingsInteractorProtocol {
     //
     func selectCategories()
-    func selectThemes(theme:String)
+    //func selectThemes(theme:String)
     func notification(option: String)
     func rateUs()
     
@@ -27,30 +27,32 @@ class SettingsInteractor : SettingsInteractorProtocol{
     
     var customHour = UserDefaults.standard
     var customMinute = UserDefaults.standard
-    var controller: JokeGenerateController?
+    var controller: JokeGenerateProtocol?
 
     
     func selectCategories() {
         //
     }
     
-    func selectThemes(theme :String){
-
-        switch theme {
-        case "Dark":
-            controller!.backGroundImage.image = UIImage(named: "dark.jpg")
-
-      
-        case "Light":
-            controller!.backGroundImage.image = UIImage(named: "light.jpg")
-
-
-        default:
-            print("no image")
-        
-        }
+//    func selectThemes(theme :String){
+//
+//        switch theme {
+//        case "Dark":
+//            controller?.changeBackground(theme: "dark")
+//            print("hey")
+//            presenter?.presentTheme(theme: UIImage(named: "dark")!)
+//
+//
+//        case "Light":
+//            controller?.changeBackground(theme: "light.jpg")
+//
+//
+//        default:
+//            print("no image")
+//
+//        }
        
-    }
+ //   }
     
     func notification(option : String) {
         presenter?.presentNotification(title: "Yeayy", message: "Padawanus")

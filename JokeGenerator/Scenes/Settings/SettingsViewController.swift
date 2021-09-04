@@ -24,7 +24,7 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
     
     var  sections = [
         Section(title: "Categories ", options: ["Any","Misc","Programming","Dark","Pun","Spooky","Christmas"].compactMap({return " \($0)"})),
-        Section(title: "Themes ", options: [].compactMap({return "Cell \($0)"})),
+        Section(title: "Themes ", options: ["Dark ", "Light "].compactMap({return "\($0) Mode "})),
         Section(title: "Notifications ", options: ["Once a day","Off","Custom"].compactMap({return "\($0)"})),
         Section(title: "Rate Us", options: [].compactMap({return "Cell \($0)"})),
     ]
@@ -103,12 +103,13 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
             }
         
         if indexPath.row == 0  {
-            self.interactor?.notification(option: "padawan")
+//self.interactor?.notification(option: "padawan")
             sections[indexPath.section].isOpened = !sections[indexPath.section].isOpened
             tableView.reloadSections([indexPath.section], with: .none)
             switch indexPath.section {
             case 0:
                 print("Categories selected")
+                print(indexPath)
             case 1:
                 print("Themes selected")
             case 2:
@@ -120,9 +121,91 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
                 print("out of range")
             }
         }
-        else
+        else if indexPath.row == 1
         {
+            switch indexPath.section {
+            case 0:
+                print("Any ")
+                print(indexPath)
+            case 1:
+                print("Dark Mode ")
+              //  self.interactor?.selectThemes(theme: "Dark")
+                router?.changeTheme(theme: UIImage(named: "shrek")!)
+
+            case 2:
+                print("Once a day ")
+            default:
+                print("out of range")
+            }
         }
+        else if indexPath.row == 2
+        {
+            switch indexPath.section {
+            case 0:
+                print("Music  ")
+            case 1:
+                print("L'ght  Mode ")
+                print(indexPath)
+            case 2:
+                print("Off ")
+            default:
+                print("out of range")
+            }
+        }
+        else if indexPath.row == 3
+        {
+            switch indexPath.section {
+            case 0:
+                print("programing   ")
+            case 2:
+                print("costum  ")
+            default:
+                print("out of range")
+            }
+        }
+        else if indexPath.row == 4
+        {
+            switch indexPath.section {
+            case 0:
+                print("Dark    ")
+            default:
+                print("out of range")
+            }
+            
+        }
+        else if indexPath.row == 5
+        {
+            switch indexPath.section {
+            case 0:
+                print("Pun   ")
+            default:
+                print("out of range")
+            }
+            
+        }
+        else if indexPath.row == 6
+        {
+            switch indexPath.section {
+            case 0:
+                print("Spooky    ")
+            default:
+                print("out of range")
+            }
+            
+        }
+        else if indexPath.row == 7
+        {
+            switch indexPath.section {
+            case 0:
+                print("Crismas    ")
+            default:
+                print("out of range")
+            }
+            
+        }
+        
+            
+            
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
