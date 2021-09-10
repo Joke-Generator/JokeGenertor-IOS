@@ -19,12 +19,13 @@ protocol JokeGenerateProtocol : NSObjectProtocol {
 
 }
 
-class JokeGenerateController: UIViewController, JokeGenerateProtocol {
+class JokeGenerateController: UIViewController, JokeGenerateProtocol, SettingsControlDelegate {
     
+
     var interactor : JokeGenerateInteractorProtocol?
     var router : (NSObjectProtocol&JokeGenerateRouterProtocol)?
     var tempJoke : GeneralJoke?
-    
+    var menu : SideMenuNavigationController?
         
     @IBOutlet weak var jokeLabel: UILabel!
     
@@ -34,7 +35,9 @@ class JokeGenerateController: UIViewController, JokeGenerateProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        
+        let settingsView = SettingsViewController()
+        settingsView.delegate = self
+        menu = SideMenuNavigationController(rootViewController: settingsView)
     }
     
    
@@ -71,6 +74,13 @@ class JokeGenerateController: UIViewController, JokeGenerateProtocol {
         present(menu, animated: true, completion: nil)
         
     }
+    
+    func chanceThemeClicked(name: String) {
+        // TO DO
+        print("Yeay its main view")
+        jokeImageViewController.image = UIImage(named: name)
+    }
+    
     func shareJoke(chosenJoke : UIActivityViewController) {
         //
         present(chosenJoke, animated: true, completion: nil)
@@ -94,7 +104,7 @@ class JokeGenerateController: UIViewController, JokeGenerateProtocol {
     }
     
     @IBAction func toGoSettingsClicked(_ sender: Any) {
-        router?.toSettings()
+        router?.toSettings(menu: menu!)
     }
     
     

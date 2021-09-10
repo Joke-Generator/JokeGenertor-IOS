@@ -56,6 +56,10 @@ enum Themes
     case Green
     case AddOther
 }
+
+protocol SettingsControlDelegate {
+    func chanceThemeClicked(name: String)
+}
 //enum SettingOptions {
 //    case categories
 //    case themas

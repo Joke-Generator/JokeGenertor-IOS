@@ -9,7 +9,7 @@ import Foundation
 import SideMenu
 
 protocol JokeGenerateRouterProtocol{
-    func toSettings()
+    func toSettings(menu : SideMenuNavigationController )
     
 }
 
@@ -19,13 +19,8 @@ class  JokeGenerateRouter : NSObject, JokeGenerateRouterProtocol {
     var viewController: JokeGenerateController?
     
     
-    func toSettings() {
-        var menu : SideMenuNavigationController?
-        menu = SideMenuNavigationController(rootViewController: SettingsViewController())
-        viewController?.toSettings(menu: menu!)
-        
-        SideMenuManager.default.rightMenuNavigationController = menu
-       
+    func toSettings(menu : SideMenuNavigationController) {
+        viewController?.toSettings(menu: menu)
     }
 }
 

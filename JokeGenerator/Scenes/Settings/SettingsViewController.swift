@@ -22,6 +22,8 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
     var interactor : SettingsInteractorProtocol?
     var router : SettingsRouterProtocol?
     
+    var delegate : SettingsControlDelegate?
+    
     var  sections = [
         Section(title: "Categories ", options: ["Any","Misc","Programming","Dark","Pun","Spooky","Christmas"].compactMap({return " \($0)"})),
         Section(title: "Themes ", options: ["Dark ", "Light "].compactMap({return "\($0) Mode "})),
@@ -128,6 +130,7 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
                 print("Any ")
             case 1:
                 print("Dark Mode ")
+                delegate?.chanceThemeClicked(name: "shrek")
             case 2:
                 print("Once a day ")
             default:
