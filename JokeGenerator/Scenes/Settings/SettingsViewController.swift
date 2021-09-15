@@ -24,10 +24,12 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
     
     var delegate : SettingsControlDelegate?
     
+    var selectedCategories : [String] = ["Misc","Programming","Dark","Pun","Spooky","Christmas"]
+    
     var  sections = [
-        Section(title: "Categories ", options: ["Any","Misc","Programming","Dark","Pun","Spooky","Christmas"].compactMap({return " \($0)"})),
+        Section(title: "Categories", options: ["Misc","Programming","Dark","Pun","Spooky","Christmas"].compactMap({return "\($0)"})),
         Section(title: "Themes ", options: ["Dark ", "Light "].compactMap({return "\($0) Mode "})),
-        Section(title: "Notifications ", options: ["Once a day","Off","Custom"].compactMap({return "\($0)"})),
+        Section(title: "Notifications", options: ["Once a day","Off","Custom"].compactMap({return "\($0)"})),
         Section(title: "Rate Us", options: [].compactMap({return "Cell \($0)"})),
     ]
     
@@ -84,7 +86,23 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
+        if let cell = tableView.cellForRow(at: indexPath) {
+            if indexPath.row != 0
+            {
+                if cell.accessoryType.self == .checkmark
+                {
+                    if sections[indexPath.section].title == MenuList.Categories.rawValue {
+                        selectedCategories = selectedCategories.filter { $0 != sections[indexPath.section].options[indexPath.row-1] }
+                    }
+                }
+                else if cell.accessoryType.self == .none
+                {
+                    if sections[indexPath.section].title == MenuList.Categories.rawValue {
+                        selectedCategories.append(sections[indexPath.section].options[indexPath.row-1])
+                    }
+                }
+            }
+        }
         
         
         if indexPath.row == 0  {
@@ -109,7 +127,6 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
         {
             switch indexPath.section {
             case 0:
-                print("Any ")
                 
                 if let cell = tableView.cellForRow(at: indexPath) {
                     interactor?.allGroupCheckmark(cell: cell)
@@ -246,6 +263,9 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
         else{
             cell.textLabel?.text = sections[indexPath.section].options[indexPath.row-1]
             cell.backgroundColor = .cyan
+            if sections[indexPath.section].title == MenuList.Categories.rawValue  {
+                cell.accessoryType = .checkmark
+            }
         }
         return cell
     }
