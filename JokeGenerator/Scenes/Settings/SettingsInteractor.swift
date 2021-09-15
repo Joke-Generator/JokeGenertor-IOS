@@ -7,6 +7,7 @@
 
 import Foundation
 import UserNotifications
+import UIKit
 
 
 protocol SettingsInteractorProtocol {
@@ -15,6 +16,8 @@ protocol SettingsInteractorProtocol {
     func selectThemes()
     func notification(option: String)
     func rateUs()
+    func allGroupCheckmark(cell: UITableViewCell  )
+    func justOneCheckmark (cellType :cellCheckmarkType , cell : UITableViewCell , tableView : UITableView  )
     
 }
 
@@ -77,6 +80,62 @@ class SettingsInteractor : SettingsInteractorProtocol{
         center.add(request)
     }
     
+    func justOneCheckmark (cellType :cellCheckmarkType , cell : UITableViewCell , tableView : UITableView  )
+    {
+        let themesCell = [[1,  1],  [1,  2]]
+        let notificationsCell = [[2,  1], [2, 2], [2,  3]]
+        
+        switch cellType{
+        case .Themes:
+            let cellnumber = tableView.indexPath(for: cell)!
+           
+            for theme in themesCell {
+                
+                if cellnumber.elementsEqual(theme)
+                {
+                    cell.accessoryType = .checkmark
+                }
+                else
+                {
+                    tableView.cellForRow(at: IndexPath(indexes: theme))?.accessoryType = .none
+                }
+    
+            }
+        case .Notification:
+            let cellnumber = tableView.indexPath(for: cell)!
+            
+            for notification in notificationsCell {
+                
+                if notification.elementsEqual(cellnumber)
+                {
+                    cell.accessoryType.self = .checkmark
+                }
+                else 
+                {
+                    tableView.cellForRow(at: IndexPath(indexes: notification))?.accessoryType = .none
+                }
+         
+            }
+        
+        }
+        
+    }
+    
+    
+
+    
+    func allGroupCheckmark(cell: UITableViewCell  )
+    {
+        if cell.accessoryType.self == .checkmark
+        {
+            cell.accessoryType.self  = .none
+        }
+        else if cell.accessoryType.self == .none
+        {
+            cell.accessoryType.self = .checkmark
+        }
+        
+    }
   
     
 }

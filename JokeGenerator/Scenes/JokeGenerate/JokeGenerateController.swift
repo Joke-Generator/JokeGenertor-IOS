@@ -38,7 +38,9 @@ class JokeGenerateController: UIViewController, JokeGenerateProtocol, SettingsCo
         let settingsView = SettingsViewController()
         settingsView.delegate = self
         menu = SideMenuNavigationController(rootViewController: settingsView)
+
     }
+ 
     
    
     
@@ -86,6 +88,7 @@ class JokeGenerateController: UIViewController, JokeGenerateProtocol, SettingsCo
         present(chosenJoke, animated: true, completion: nil)
       
     }
+    
     func showRandomImage(imageName: String) {
         jokeImageViewController.image = UIImage(named: imageName)
         

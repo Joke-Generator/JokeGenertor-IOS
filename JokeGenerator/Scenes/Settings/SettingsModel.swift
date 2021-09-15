@@ -60,6 +60,11 @@ enum Themes
 protocol SettingsControlDelegate {
     func chanceThemeClicked(name: String)
 }
+
+enum cellCheckmarkType{
+    case Themes
+    case Notification
+}
 //enum SettingOptions {
 //    case categories
 //    case themas

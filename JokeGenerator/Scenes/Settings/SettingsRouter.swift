@@ -10,6 +10,7 @@ import Foundation
 protocol SettingsRouterProtocol {
     //
     func toJokeGenerate()
+   
 }
 
 class SettingsRouter : SettingsRouterProtocol {
@@ -21,4 +22,6 @@ class SettingsRouter : SettingsRouterProtocol {
         //to main view
         
     }
+    
+    
 }
