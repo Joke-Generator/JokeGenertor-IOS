@@ -26,9 +26,8 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
     
     var keepCategories = UserDefaults.standard
     
-    
     var selectedCategories : [String] = ["Misc","Programming","Dark","Pun","Spooky","Christmas"]
-    
+   
     var  sections = [
         Section(title: "Categories", options: ["Misc","Programming","Dark","Pun","Spooky","Christmas"].compactMap({return "\($0)"})),
         Section(title: "Themes ", options: ["Dark ", "Light "].compactMap({return "\($0) Mode "})),
@@ -40,6 +39,9 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         setup()
+        if keepCategories.array(forKey: "selected") != nil{
+            selectedCategories = (keepCategories.array(forKey: "selected") as! [String])
+        }
     }
     
     func setup(){
@@ -64,7 +66,7 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
     }
     
     func notification(alert : UIAlertController) {
-       present(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
         
     }
     
@@ -96,12 +98,15 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
                 {
                     if sections[indexPath.section].title == MenuList.Categories.rawValue {
                         selectedCategories = selectedCategories.filter { $0 != sections[indexPath.section].options[indexPath.row-1] }
+                        keepCategories.setValue(selectedCategories, forKey: "selected")
+                        let tempList = keepCategories.array(forKey: "selected")
                     }
                 }
                 else if cell.accessoryType.self == .none
                 {
                     if sections[indexPath.section].title == MenuList.Categories.rawValue {
                         selectedCategories.append(sections[indexPath.section].options[indexPath.row-1])
+                        keepCategories.setValue(selectedCategories, forKey: "selected")
                     }
                 }
             }
@@ -109,7 +114,6 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
         
         
         if indexPath.row == 0  {
-            self.interactor?.notification(option: "padawan")
             sections[indexPath.section].isOpened = !sections[indexPath.section].isOpened
             tableView.reloadSections([indexPath.section], with: .none)
             switch indexPath.section {
@@ -119,7 +123,6 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
                 print("Themes selected")
             case 2:
                 print("Notification selected")
-                self.interactor?.notification(option: "padawan")
             case 3:
                 print("Rate us selected")
             default:
@@ -133,22 +136,17 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
                 
                 if let cell = tableView.cellForRow(at: indexPath) {
                     interactor?.allGroupCheckmark(cell: cell)
-                    
-                    }
+                }
             case 1:
-                
                 if let cell = tableView.cellForRow(at: indexPath) {
                     interactor?.justOneCheckmark(cellType: .Themes, cell: cell, tableView: tableView)
-                    
                 }
-
                 delegate?.chanceThemeClicked(name: "shrek")
-
-               
             case 2:
                 print("Once a day ")
                 if let cell = tableView.cellForRow(at: indexPath) {
                     interactor?.justOneCheckmark(cellType: .Notification, cell: cell, tableView: tableView)
+                    interactor?.notification(option: "Once a day")
                 }
             default:
                 print("out of range")
@@ -161,9 +159,7 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
                 print("Music  ")
                 if let cell = tableView.cellForRow(at: indexPath) {
                     interactor?.allGroupCheckmark(cell: cell)
-                    
-                    }
-                
+                }
             case 1:
                 print("L'ght  Mode ")
                 if let cell = tableView.cellForRow(at: indexPath) {
@@ -173,6 +169,7 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
                 print("Off ")
                 if let cell = tableView.cellForRow(at: indexPath) {
                     interactor?.justOneCheckmark(cellType: .Notification, cell: cell, tableView: tableView)
+                    interactor?.notification(option: "off")
                 }
             default:
                 print("out of range")
@@ -185,12 +182,12 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
                 print("programing   ")
                 if let cell = tableView.cellForRow(at: indexPath) {
                     interactor?.allGroupCheckmark(cell: cell)
-                    
-                    }
+                }
             case 2:
                 print("costum  ")
                 if let cell = tableView.cellForRow(at: indexPath) {
                     interactor?.justOneCheckmark(cellType: .Notification, cell: cell, tableView: tableView)
+                    interactor?.notification(option: "custom")
                 }
             default:
                 print("out of range")
@@ -203,12 +200,10 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
                 print("Dark    ")
                 if let cell = tableView.cellForRow(at: indexPath) {
                     interactor?.allGroupCheckmark(cell: cell)
-                    
-                    }
+                }
             default:
                 print("out of range")
             }
-            
         }
         else if indexPath.row == 5
         {
@@ -217,12 +212,10 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
                 print("Pun   ")
                 if let cell = tableView.cellForRow(at: indexPath) {
                     interactor?.allGroupCheckmark(cell: cell)
-                    
-                    }
+                }
             default:
                 print("out of range")
             }
-            
         }
         else if indexPath.row == 6
         {
@@ -231,12 +224,10 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
                 print("Spooky    ")
                 if let cell = tableView.cellForRow(at: indexPath) {
                     interactor?.allGroupCheckmark(cell: cell)
-                    
-                    }
+                }
             default:
                 print("out of range")
             }
-            
         }
         else if indexPath.row == 7
         {
@@ -245,16 +236,14 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
                 print("Crismas    ")
                 if let cell = tableView.cellForRow(at: indexPath) {
                     interactor?.allGroupCheckmark(cell: cell)
-                    
-                    }
+                }
             default:
                 print("out of range")
             }
-            
         }
         
-            
-            
+        
+        
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
@@ -267,7 +256,17 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
             cell.textLabel?.text = sections[indexPath.section].options[indexPath.row-1]
             cell.backgroundColor = .cyan
             if sections[indexPath.section].title == MenuList.Categories.rawValue  {
-                cell.accessoryType = .checkmark
+                let tempList = keepCategories.array(forKey: "selected")
+                if tempList == nil {
+                    cell.accessoryType = .checkmark
+                }
+                else{
+                    for title in tempList! {
+                        if sections[indexPath.section].options[indexPath.row-1] == title as! String {
+                            cell.accessoryType = .checkmark
+                        }
+                    }
+                }
             }
         }
         return cell
