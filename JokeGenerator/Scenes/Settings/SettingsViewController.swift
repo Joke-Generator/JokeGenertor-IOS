@@ -24,6 +24,9 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
     
     var delegate : SettingsControlDelegate?
     
+    var keepCategories = UserDefaults.standard
+    
+    
     var selectedCategories : [String] = ["Misc","Programming","Dark","Pun","Spooky","Christmas"]
     
     var  sections = [
