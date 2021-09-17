@@ -148,6 +148,8 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
                 print("L'ght  Mode ")
                 if let cell = tableView.cellForRow(at: indexPath) {
                     interactor?.justOneCheckmark(cellType: .Themes, cell: cell, tableView: tableView)
+                    delegate?.chanceThemeClicked(name:"dark.png")
+
                 }
             case 2:
                 print("Off ")
