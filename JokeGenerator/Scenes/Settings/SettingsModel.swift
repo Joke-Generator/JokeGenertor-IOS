@@ -15,21 +15,22 @@ struct Settings
     var notification = Bool.self
     
 }
-struct Categorys
-{
+
+enum JokesCategory : String {
     
-    enum JokesCategory
-    {
-        // Burada default olarak any secerek de baslaya biliriz General sadece OfficalJoke da olacal onu ozellille ayirmak gerek var mi tam dusunemedim acikcasi
-        case Misc
-        case Programming
-        case Dark
-        case Pun
-        case Spooky
-        case Christmas
-       
-    }
-//    var Category = [JokesCategory].self
+    case Misc = "Miscellaneous"
+    case Programming = "Programming"
+    case Dark = "Dark"
+    case Pun = "Pun"
+    case Spooky = "Spooky"
+    case Christmas = "Christmas"
+}
+
+enum MenuList : String {
+    case Categories = "Categories"
+    case Themes = "Themes"
+    case Notifications = "Notifications"
+    case RateUs = "Rate Us"
     
 }
 
