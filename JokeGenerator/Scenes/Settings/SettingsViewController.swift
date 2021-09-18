@@ -9,8 +9,7 @@ import Foundation
 import UIKit
 
 protocol SettingsProtocol {
-    //
-    //    func eventClicked(option : SettingOptions)
+    
     func selectCategories()
     func selectThemes()
     func notification(alert : UIAlertController)
@@ -39,8 +38,8 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         setup()
-        if keepCategories.array(forKey: "selected") != nil{
-            selectedCategories = (keepCategories.array(forKey: "selected") as! [String])
+        if keepCategories.array(forKey: UserDefaultKey.categories.rawValue) != nil{
+            selectedCategories = (keepCategories.array(forKey: UserDefaultKey.categories.rawValue) as! [String])
         }
     }
     
@@ -98,15 +97,14 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
                 {
                     if sections[indexPath.section].title == MenuList.Categories.rawValue {
                         selectedCategories = selectedCategories.filter { $0 != sections[indexPath.section].options[indexPath.row-1] }
-                        keepCategories.setValue(selectedCategories, forKey: "selected")
-                        let tempList = keepCategories.array(forKey: "selected")
+                        keepCategories.setValue(selectedCategories, forKey: UserDefaultKey.categories.rawValue)
                     }
                 }
                 else if cell.accessoryType.self == .none
                 {
                     if sections[indexPath.section].title == MenuList.Categories.rawValue {
                         selectedCategories.append(sections[indexPath.section].options[indexPath.row-1])
-                        keepCategories.setValue(selectedCategories, forKey: "selected")
+                        keepCategories.setValue(selectedCategories, forKey: UserDefaultKey.categories.rawValue)
                     }
                 }
             }
@@ -256,7 +254,7 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
             cell.textLabel?.text = sections[indexPath.section].options[indexPath.row-1]
             cell.backgroundColor = .cyan
             if sections[indexPath.section].title == MenuList.Categories.rawValue  {
-                let tempList = keepCategories.array(forKey: "selected")
+                let tempList = keepCategories.array(forKey: UserDefaultKey.categories.rawValue)
                 if tempList == nil {
                     cell.accessoryType = .checkmark
                 }
