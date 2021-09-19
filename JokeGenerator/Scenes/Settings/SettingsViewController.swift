@@ -122,7 +122,7 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
                     
                 }
 
-                delegate?.chanceThemeClicked(name: "shrek")
+                delegate?.chanceThemeClicked(name: "dark.png")//sor burayi????
 
                
             case 2:
@@ -148,8 +148,10 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
                 print("L'ght  Mode ")
                 if let cell = tableView.cellForRow(at: indexPath) {
                     interactor?.justOneCheckmark(cellType: .Themes, cell: cell, tableView: tableView)
-                    delegate?.chanceThemeClicked(name:"dark.png")
-
+                  //  interactor?.selectThemes()
+            //        delegate?.chanceThemeClicked(name: "light.png")
+                    router?.changeBackground(image: "light.png")
+                    
                 }
             case 2:
                 print("Off ")
@@ -185,6 +187,9 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
                 print("Dark    ")
                 if let cell = tableView.cellForRow(at: indexPath) {
                     interactor?.allGroupCheckmark(cell: cell)
+                    interactor?.selectThemes()
+                    delegate?.chanceThemeClicked(name: "dark.png")
+
                     
                     }
             default:
