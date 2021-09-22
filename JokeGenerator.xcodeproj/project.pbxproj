@@ -16,6 +16,22 @@
 		0D48FE3A26CC4A89009B16C3 /* SettingsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D48FE3926CC4A89009B16C3 /* SettingsWorker.swift */; };
 		0D48FE3C26CC4A93009B16C3 /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D48FE3B26CC4A93009B16C3 /* SettingsRouter.swift */; };
 		0D48FE3E26CC4B51009B16C3 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D48FE3D26CC4B51009B16C3 /* SettingsModel.swift */; };
+		0DA8239626FAB49F00B48BE4 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DA8239526FAB49F00B48BE4 /* WidgetKit.framework */; };
+		0DA8239826FAB49F00B48BE4 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DA8239726FAB49F00B48BE4 /* SwiftUI.framework */; };
+		0DA8239B26FAB49F00B48BE4 /* JokeGeneratorWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8239A26FAB49F00B48BE4 /* JokeGeneratorWidget.swift */; };
+		0DA8239E26FAB4A100B48BE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DA8239D26FAB4A100B48BE4 /* Assets.xcassets */; };
+		0DA823A026FAB4A100B48BE4 /* JokeGeneratorWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8239C26FAB49F00B48BE4 /* JokeGeneratorWidget.intentdefinition */; };
+		0DA823A126FAB4A100B48BE4 /* JokeGeneratorWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8239C26FAB49F00B48BE4 /* JokeGeneratorWidget.intentdefinition */; };
+		0DA823A426FAB4A100B48BE4 /* JokeGeneratorWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0DA8239426FAB49F00B48BE4 /* JokeGeneratorWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0DA823A926FAB58100B48BE4 /* JokeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D48FE3026CB266D009B16C3 /* JokeModel.swift */; };
+		0DA823AD26FAB70000B48BE4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D48FE3326CC4A2A009B16C3 /* SettingsViewController.swift */; };
+		0DA823AE26FAB70600B48BE4 /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D48FE3526CC4A6F009B16C3 /* SettingsInteractor.swift */; };
+		0DA823AF26FAB70800B48BE4 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D48FE3726CC4A79009B16C3 /* SettingsPresenter.swift */; };
+		0DA823B026FAB70A00B48BE4 /* SettingsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D48FE3926CC4A89009B16C3 /* SettingsWorker.swift */; };
+		0DA823B126FAB70D00B48BE4 /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D48FE3B26CC4A93009B16C3 /* SettingsRouter.swift */; };
+		0DA823B226FAB70F00B48BE4 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D48FE3D26CC4B51009B16C3 /* SettingsModel.swift */; };
+		0DA823B326FAB72E00B48BE4 /* JokeGenerateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D48FE2D26CB14A4009B16C3 /* JokeGenerateModel.swift */; };
+		0DA823B826FAB7A500B48BE4 /* JokeGenerateWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D48FE2B26CB05FD009B16C3 /* JokeGenerateWorker.swift */; };
 		0DAE976926C851A100587E72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAE976826C851A100587E72 /* AppDelegate.swift */; };
 		0DAE976B26C851A100587E72 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAE976A26C851A100587E72 /* SceneDelegate.swift */; };
 		0DAE976D26C851A100587E72 /* JokeGenerateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAE976C26C851A100587E72 /* JokeGenerateController.swift */; };
@@ -28,6 +44,30 @@
 		EA22CF250BFFBDF670E82970 /* Pods_JokeGenerator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF44FE38845F4B62772AC734 /* Pods_JokeGenerator.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0DA823A226FAB4A100B48BE4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DAE975D26C851A000587E72 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0DA8239326FAB49F00B48BE4;
+			remoteInfo = JokeGeneratorWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0DA823A826FAB4A100B48BE4 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				0DA823A426FAB4A100B48BE4 /* JokeGeneratorWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0D48FE2B26CB05FD009B16C3 /* JokeGenerateWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeGenerateWorker.swift; sourceTree = "<group>"; };
 		0D48FE2D26CB14A4009B16C3 /* JokeGenerateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeGenerateModel.swift; sourceTree = "<group>"; };
@@ -38,6 +78,15 @@
 		0D48FE3926CC4A89009B16C3 /* SettingsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWorker.swift; sourceTree = "<group>"; };
 		0D48FE3B26CC4A93009B16C3 /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
 		0D48FE3D26CC4B51009B16C3 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		0DA8238F26FAB3F700B48BE4 /* JokeGenerator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JokeGenerator.entitlements; sourceTree = "<group>"; };
+		0DA8239426FAB49F00B48BE4 /* JokeGeneratorWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = JokeGeneratorWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DA8239526FAB49F00B48BE4 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		0DA8239726FAB49F00B48BE4 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		0DA8239A26FAB49F00B48BE4 /* JokeGeneratorWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeGeneratorWidget.swift; sourceTree = "<group>"; };
+		0DA8239C26FAB49F00B48BE4 /* JokeGeneratorWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = JokeGeneratorWidget.intentdefinition; sourceTree = "<group>"; };
+		0DA8239D26FAB4A100B48BE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0DA8239F26FAB4A100B48BE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0DA823AA26FAB63500B48BE4 /* JokeGeneratorWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JokeGeneratorWidgetExtension.entitlements; sourceTree = "<group>"; };
 		0DAE976526C851A100587E72 /* JokeGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JokeGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DAE976826C851A100587E72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DAE976A26C851A100587E72 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +104,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0DA8239126FAB49F00B48BE4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DA8239826FAB49F00B48BE4 /* SwiftUI.framework in Frameworks */,
+				0DA8239626FAB49F00B48BE4 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0DAE976226C851A000587E72 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -96,10 +154,23 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		0DA8239926FAB49F00B48BE4 /* JokeGeneratorWidget */ = {
+			isa = PBXGroup;
+			children = (
+				0DA8239A26FAB49F00B48BE4 /* JokeGeneratorWidget.swift */,
+				0DA8239C26FAB49F00B48BE4 /* JokeGeneratorWidget.intentdefinition */,
+				0DA8239D26FAB4A100B48BE4 /* Assets.xcassets */,
+				0DA8239F26FAB4A100B48BE4 /* Info.plist */,
+			);
+			path = JokeGeneratorWidget;
+			sourceTree = "<group>";
+		};
 		0DAE975C26C851A000587E72 = {
 			isa = PBXGroup;
 			children = (
+				0DA823AA26FAB63500B48BE4 /* JokeGeneratorWidgetExtension.entitlements */,
 				0DAE976726C851A100587E72 /* JokeGenerator */,
+				0DA8239926FAB49F00B48BE4 /* JokeGeneratorWidget */,
 				0DAE976626C851A100587E72 /* Products */,
 				07F89F9B7B0F10E5DE94CEC4 /* Pods */,
 				26B3820442422E74181904FD /* Frameworks */,
@@ -110,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				0DAE976526C851A100587E72 /* JokeGenerator.app */,
+				0DA8239426FAB49F00B48BE4 /* JokeGeneratorWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -117,6 +189,7 @@
 		0DAE976726C851A100587E72 /* JokeGenerator */ = {
 			isa = PBXGroup;
 			children = (
+				0DA8238F26FAB3F700B48BE4 /* JokeGenerator.entitlements */,
 				0D48FE2F26CB265C009B16C3 /* Model */,
 				0DAE976826C851A100587E72 /* AppDelegate.swift */,
 				0DAE976A26C851A100587E72 /* SceneDelegate.swift */,
@@ -155,6 +228,8 @@
 			isa = PBXGroup;
 			children = (
 				DF44FE38845F4B62772AC734 /* Pods_JokeGenerator.framework */,
+				0DA8239526FAB49F00B48BE4 /* WidgetKit.framework */,
+				0DA8239726FAB49F00B48BE4 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -162,6 +237,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0DA8239326FAB49F00B48BE4 /* JokeGeneratorWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0DA823A526FAB4A100B48BE4 /* Build configuration list for PBXNativeTarget "JokeGeneratorWidgetExtension" */;
+			buildPhases = (
+				0DA8239026FAB49F00B48BE4 /* Sources */,
+				0DA8239126FAB49F00B48BE4 /* Frameworks */,
+				0DA8239226FAB49F00B48BE4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JokeGeneratorWidgetExtension;
+			productName = JokeGeneratorWidgetExtension;
+			productReference = 0DA8239426FAB49F00B48BE4 /* JokeGeneratorWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		0DAE976426C851A000587E72 /* JokeGenerator */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0DAE977926C851A500587E72 /* Build configuration list for PBXNativeTarget "JokeGenerator" */;
@@ -171,10 +263,12 @@
 				0DAE976226C851A000587E72 /* Frameworks */,
 				0DAE976326C851A000587E72 /* Resources */,
 				720B99CF8F4BB6E42703E019 /* [CP] Embed Pods Frameworks */,
+				0DA823A826FAB4A100B48BE4 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0DA823A326FAB4A100B48BE4 /* PBXTargetDependency */,
 			);
 			name = JokeGenerator;
 			productName = JokeGenerator;
@@ -190,6 +284,9 @@
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
+					0DA8239326FAB49F00B48BE4 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
 					0DAE976426C851A000587E72 = {
 						CreatedOnToolsVersion = 12.5.1;
 					};
@@ -209,11 +306,20 @@
 			projectRoot = "";
 			targets = (
 				0DAE976426C851A000587E72 /* JokeGenerator */,
+				0DA8239326FAB49F00B48BE4 /* JokeGeneratorWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0DA8239226FAB49F00B48BE4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DA8239E26FAB4A100B48BE4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0DAE976326C851A000587E72 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -269,11 +375,30 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0DA8239026FAB49F00B48BE4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DA8239B26FAB49F00B48BE4 /* JokeGeneratorWidget.swift in Sources */,
+				0DA823B326FAB72E00B48BE4 /* JokeGenerateModel.swift in Sources */,
+				0DA823B026FAB70A00B48BE4 /* SettingsWorker.swift in Sources */,
+				0DA823B126FAB70D00B48BE4 /* SettingsRouter.swift in Sources */,
+				0DA823A026FAB4A100B48BE4 /* JokeGeneratorWidget.intentdefinition in Sources */,
+				0DA823AD26FAB70000B48BE4 /* SettingsViewController.swift in Sources */,
+				0DA823B226FAB70F00B48BE4 /* SettingsModel.swift in Sources */,
+				0DA823A926FAB58100B48BE4 /* JokeModel.swift in Sources */,
+				0DA823AE26FAB70600B48BE4 /* SettingsInteractor.swift in Sources */,
+				0DA823AF26FAB70800B48BE4 /* SettingsPresenter.swift in Sources */,
+				0DA823B826FAB7A500B48BE4 /* JokeGenerateWorker.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0DAE976126C851A000587E72 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				0DAE978126C8525C00587E72 /* JokeGeneratePresenter.swift in Sources */,
+				0DA823A126FAB4A100B48BE4 /* JokeGeneratorWidget.intentdefinition in Sources */,
 				0DAE976D26C851A100587E72 /* JokeGenerateController.swift in Sources */,
 				0DAE976926C851A100587E72 /* AppDelegate.swift in Sources */,
 				0D48FE3C26CC4A93009B16C3 /* SettingsRouter.swift in Sources */,
@@ -292,6 +417,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0DA823A326FAB4A100B48BE4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0DA8239326FAB49F00B48BE4 /* JokeGeneratorWidgetExtension */;
+			targetProxy = 0DA823A226FAB4A100B48BE4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0DAE976E26C851A100587E72 /* Main.storyboard */ = {
@@ -313,6 +446,50 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0DA823A626FAB4A100B48BE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = JokeGeneratorWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4Q3JZC8T8R;
+				INFOPLIST_FILE = JokeGeneratorWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ugsuzf.JokeGenerator.JokeGeneratorWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0DA823A726FAB4A100B48BE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = JokeGeneratorWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4Q3JZC8T8R;
+				INFOPLIST_FILE = JokeGeneratorWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ugsuzf.JokeGenerator.JokeGeneratorWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		0DAE977726C851A500587E72 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -433,8 +610,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7C4A2702F9D29FD5B6AB0D1D /* Pods-JokeGenerator.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = JokeGenerator/JokeGenerator.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Q3JZC8T8R;
 				INFOPLIST_FILE = JokeGenerator/Info.plist;
@@ -453,8 +632,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 64895F76DAA254E8EFE9A5E0 /* Pods-JokeGenerator.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = JokeGenerator/JokeGenerator.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Q3JZC8T8R;
 				INFOPLIST_FILE = JokeGenerator/Info.plist;
@@ -472,6 +653,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0DA823A526FAB4A100B48BE4 /* Build configuration list for PBXNativeTarget "JokeGeneratorWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0DA823A626FAB4A100B48BE4 /* Debug */,
+				0DA823A726FAB4A100B48BE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0DAE976026C851A000587E72 /* Build configuration list for PBXProject "JokeGenerator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
