@@ -31,7 +31,6 @@ struct Provider : TimelineProvider {
     }
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<JokeEntry>) -> Void) {
-        print("nooo")
         let tempJoke = JokeGenerateWorker().fetch()
         let entry = JokeEntry(joke: tempJoke)
         let timeLine = Timeline(entries: [entry], policy: .never)
