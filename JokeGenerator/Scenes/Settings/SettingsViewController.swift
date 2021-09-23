@@ -139,7 +139,6 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
                 if let cell = tableView.cellForRow(at: indexPath) {
                     interactor?.justOneCheckmark(cellType: .Themes, cell: cell, tableView: tableView)
                 }
-                delegate?.chanceThemeClicked(name: "dark.jpg")
             case 2:
                 print("Once a day ")
                 if let cell = tableView.cellForRow(at: indexPath) {
@@ -200,6 +199,8 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
                 print("Dark    ")
                 if let cell = tableView.cellForRow(at: indexPath) {
                     interactor?.allGroupCheckmark(cell: cell)
+                    delegate?.chanceThemeClicked(name: "dark.jpg")
+
                 }
             default:
                 print("out of range")
