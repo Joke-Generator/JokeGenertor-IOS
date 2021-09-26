@@ -14,7 +14,7 @@ protocol SettingsInteractorProtocol {
     //
     func selectCategories()
     func selectThemes()
-    func notification(option: String)
+    func notification(option: NotificationType)
     func rateUs()
     func allGroupCheckmark(cell: UITableViewCell  )
     func justOneCheckmark (cellType :cellCheckmarkType , cell : UITableViewCell , tableView : UITableView  )
@@ -26,8 +26,7 @@ class SettingsInteractor : SettingsInteractorProtocol{
     var presenter : SettingsPresenterProtocol?
     var worker : SettingsWorkerProtocol?
     
-    var customHour = UserDefaults.standard
-    var customMinute = UserDefaults.standard
+    var customTime = UserDefaults.standard
     
     
     func selectCategories() {
@@ -38,20 +37,18 @@ class SettingsInteractor : SettingsInteractorProtocol{
 //        <#code#>
     }
     
-    func notification(option : String) {
+    func notification(option : NotificationType) {
         let center = UNUserNotificationCenter.current()
         center.removeAllPendingNotificationRequests()
         switch option {
-        case "Once a day":
+        case .OnceADay:
             sendNotification(hour: 15, minute: 00)
             presenter?.presentNotification(title: "Once a day", message: "Your notifications will send at once a day")
-        case "off":
+        case .Off:
             presenter?.presentNotification(title: "Off", message: "Your notifications closed")
-        case "custom":
-            sendNotification(hour: customHour.integer(forKey: "Hour"), minute: customMinute.integer(forKey: "Minute"))
+        case .Custom:
+            sendNotification(hour: customTime.integer(forKey: "Hour"), minute: customTime.integer(forKey: "Minute"))
             presenter?.presentNotification(title: "Custom", message: "Your notifications will send at chosen time")
-        default:
-            print("No, I'm your father")
         }
         
     }
@@ -61,11 +58,12 @@ class SettingsInteractor : SettingsInteractorProtocol{
     }
     
     func sendNotification(hour: Int, minute: Int){
+        let joke = JokeGenerateWorker().fetch()
         let center = UNUserNotificationCenter.current()
         center.removeAllPendingNotificationRequests()
         let content = UNMutableNotificationContent()
         content.title = "Late wake up call"
-        content.body = "The early bird catches the worm, but the second mouse gets the cheese."
+        content.body = joke.joke
         content.categoryIdentifier = "alarm"
         //           content.userInfo = ["customData": "fizzbuzz"]
         content.sound = UNNotificationSound.default
@@ -113,15 +111,9 @@ class SettingsInteractor : SettingsInteractorProtocol{
                 {
                     tableView.cellForRow(at: IndexPath(indexes: notification))?.accessoryType = .none
                 }
-         
             }
-        
         }
-        
     }
-    
-    
-
     
     func allGroupCheckmark(cell: UITableViewCell  )
     {
