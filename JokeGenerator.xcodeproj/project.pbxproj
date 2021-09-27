@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D36014F26FFF623009C6A5B /* DatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D36014E26FFF623009C6A5B /* DatePickerCell.swift */; };
 		0D48FE2C26CB05FD009B16C3 /* JokeGenerateWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D48FE2B26CB05FD009B16C3 /* JokeGenerateWorker.swift */; };
 		0D48FE2E26CB14A4009B16C3 /* JokeGenerateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D48FE2D26CB14A4009B16C3 /* JokeGenerateModel.swift */; };
 		0D48FE3126CB266E009B16C3 /* JokeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D48FE3026CB266D009B16C3 /* JokeModel.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D36014E26FFF623009C6A5B /* DatePickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerCell.swift; sourceTree = "<group>"; };
 		0D48FE2B26CB05FD009B16C3 /* JokeGenerateWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeGenerateWorker.swift; sourceTree = "<group>"; };
 		0D48FE2D26CB14A4009B16C3 /* JokeGenerateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeGenerateModel.swift; sourceTree = "<group>"; };
 		0D48FE3026CB266D009B16C3 /* JokeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeModel.swift; sourceTree = "<group>"; };
@@ -75,6 +77,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		0D36014D26FFF60D009C6A5B /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				0D36014E26FFF623009C6A5B /* DatePickerCell.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		0D48FE2F26CB265C009B16C3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +127,7 @@
 		0DAE976726C851A100587E72 /* JokeGenerator */ = {
 			isa = PBXGroup;
 			children = (
+				0D36014D26FFF60D009C6A5B /* Sources */,
 				0D48FE2F26CB265C009B16C3 /* Model */,
 				0DAE976826C851A100587E72 /* AppDelegate.swift */,
 				0DAE976A26C851A100587E72 /* SceneDelegate.swift */,
@@ -284,6 +295,7 @@
 				0DAE978326C852AC00587E72 /* JokeGenerateRouter.swift in Sources */,
 				0DAE976B26C851A100587E72 /* SceneDelegate.swift in Sources */,
 				0D48FE2C26CB05FD009B16C3 /* JokeGenerateWorker.swift in Sources */,
+				0D36014F26FFF623009C6A5B /* DatePickerCell.swift in Sources */,
 				0D48FE2E26CB14A4009B16C3 /* JokeGenerateModel.swift in Sources */,
 				0D48FE3A26CC4A89009B16C3 /* SettingsWorker.swift in Sources */,
 				0D48FE3126CB266E009B16C3 /* JokeModel.swift in Sources */,
