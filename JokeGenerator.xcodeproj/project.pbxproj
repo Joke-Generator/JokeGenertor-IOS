@@ -25,7 +25,6 @@
 		0DAE977F26C8524B00587E72 /* JokeGenerateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAE977E26C8524B00587E72 /* JokeGenerateInteractor.swift */; };
 		0DAE978126C8525C00587E72 /* JokeGeneratePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAE978026C8525C00587E72 /* JokeGeneratePresenter.swift */; };
 		0DAE978326C852AC00587E72 /* JokeGenerateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAE978226C852AC00587E72 /* JokeGenerateRouter.swift */; };
-		112766C326F49B220038D799 /* JokeGeneratorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112766C226F49B210038D799 /* JokeGeneratorService.swift */; };
 		112766C526F5FB590038D799 /* light.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 112766C426F5FB580038D799 /* light.jpg */; };
 		112766C726F5FB5E0038D799 /* dark.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 112766C626F5FB5E0038D799 /* dark.jpg */; };
 		EA22CF250BFFBDF670E82970 /* Pods_JokeGenerator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF44FE38845F4B62772AC734 /* Pods_JokeGenerator.framework */; };
@@ -52,7 +51,6 @@
 		0DAE977E26C8524B00587E72 /* JokeGenerateInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeGenerateInteractor.swift; sourceTree = "<group>"; };
 		0DAE978026C8525C00587E72 /* JokeGeneratePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeGeneratePresenter.swift; sourceTree = "<group>"; };
 		0DAE978226C852AC00587E72 /* JokeGenerateRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeGenerateRouter.swift; sourceTree = "<group>"; };
-		112766C226F49B210038D799 /* JokeGeneratorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeGeneratorService.swift; sourceTree = "<group>"; };
 		112766C426F5FB580038D799 /* light.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = light.jpg; sourceTree = "<group>"; };
 		112766C626F5FB5E0038D799 /* dark.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dark.jpg; sourceTree = "<group>"; };
 		64895F76DAA254E8EFE9A5E0 /* Pods-JokeGenerator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JokeGenerator.release.xcconfig"; path = "Target Support Files/Pods-JokeGenerator/Pods-JokeGenerator.release.xcconfig"; sourceTree = "<group>"; };
@@ -123,7 +121,6 @@
 		0DAE976726C851A100587E72 /* JokeGenerator */ = {
 			isa = PBXGroup;
 			children = (
-				112766C126F49AEB0038D799 /* API */,
 				0D48FE2F26CB265C009B16C3 /* Model */,
 				0DAE976826C851A100587E72 /* AppDelegate.swift */,
 				0DAE976A26C851A100587E72 /* SceneDelegate.swift */,
@@ -158,14 +155,6 @@
 				0D48FE2D26CB14A4009B16C3 /* JokeGenerateModel.swift */,
 			);
 			path = JokeGenerate;
-			sourceTree = "<group>";
-		};
-		112766C126F49AEB0038D799 /* API */ = {
-			isa = PBXGroup;
-			children = (
-				112766C226F49B210038D799 /* JokeGeneratorService.swift */,
-			);
-			path = API;
 			sourceTree = "<group>";
 		};
 		26B3820442422E74181904FD /* Frameworks */ = {
@@ -298,7 +287,6 @@
 				0D48FE3C26CC4A93009B16C3 /* SettingsRouter.swift in Sources */,
 				0D48FE3426CC4A2A009B16C3 /* SettingsViewController.swift in Sources */,
 				0DAE977F26C8524B00587E72 /* JokeGenerateInteractor.swift in Sources */,
-				112766C326F49B220038D799 /* JokeGeneratorService.swift in Sources */,
 				0D48FE3E26CC4B51009B16C3 /* SettingsModel.swift in Sources */,
 				0D48FE3626CC4A6F009B16C3 /* SettingsInteractor.swift in Sources */,
 				0DAE978326C852AC00587E72 /* JokeGenerateRouter.swift in Sources */,

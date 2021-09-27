@@ -26,6 +26,7 @@ class SettingsRouter : SettingsRouterProtocol {
     }
     func changeBackground(image:String){
         viewController?.delegate?.chanceThemeClicked(name: image)
+
     }
     
     

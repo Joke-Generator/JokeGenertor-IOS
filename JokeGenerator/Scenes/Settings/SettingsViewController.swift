@@ -9,8 +9,7 @@ import Foundation
 import UIKit
 
 protocol SettingsProtocol {
-    //
-    //    func eventClicked(option : SettingOptions)
+    
     func selectCategories()
     func selectThemes()
     func notification(alert : UIAlertController)
@@ -24,10 +23,14 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
     
     var delegate : SettingsControlDelegate?
     
+    var keepCategories = UserDefaults.standard
+    
+    var selectedCategories : [String] = ["Misc","Programming","Dark","Pun","Spooky","Christmas"]
+   
     var  sections = [
-        Section(title: "Categories ", options: ["Any","Misc","Programming","Dark","Pun","Spooky","Christmas"].compactMap({return " \($0)"})),
+        Section(title: "Categories", options: ["Misc","Programming","Dark","Pun","Spooky","Christmas"].compactMap({return "\($0)"})),
         Section(title: "Themes ", options: ["Dark ", "Light "].compactMap({return "\($0) Mode "})),
-        Section(title: "Notifications ", options: ["Once a day","Off","Custom"].compactMap({return "\($0)"})),
+        Section(title: "Notifications", options: ["Once a day","Off","Custom"].compactMap({return "\($0)"})),
         Section(title: "Rate Us", options: [].compactMap({return "Cell \($0)"})),
     ]
     
@@ -35,6 +38,9 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         setup()
+        if keepCategories.array(forKey: UserDefaultKey.categories.rawValue) != nil{
+            selectedCategories = (keepCategories.array(forKey: UserDefaultKey.categories.rawValue) as! [String])
+        }
     }
     
     func setup(){
@@ -59,7 +65,7 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
     }
     
     func notification(alert : UIAlertController) {
-       present(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
         
     }
     
@@ -84,11 +90,28 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
+        if let cell = tableView.cellForRow(at: indexPath) {
+            if indexPath.row != 0
+            {
+                if cell.accessoryType.self == .checkmark
+                {
+                    if sections[indexPath.section].title == MenuList.Categories.rawValue {
+                        selectedCategories = selectedCategories.filter { $0 != sections[indexPath.section].options[indexPath.row-1] }
+                        keepCategories.setValue(selectedCategories, forKey: UserDefaultKey.categories.rawValue)
+                    }
+                }
+                else if cell.accessoryType.self == .none
+                {
+                    if sections[indexPath.section].title == MenuList.Categories.rawValue {
+                        selectedCategories.append(sections[indexPath.section].options[indexPath.row-1])
+                        keepCategories.setValue(selectedCategories, forKey: UserDefaultKey.categories.rawValue)
+                    }
+                }
+            }
+        }
         
         
         if indexPath.row == 0  {
-            self.interactor?.notification(option: "padawan")
             sections[indexPath.section].isOpened = !sections[indexPath.section].isOpened
             tableView.reloadSections([indexPath.section], with: .none)
             switch indexPath.section {
@@ -98,7 +121,6 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
                 print("Themes selected")
             case 2:
                 print("Notification selected")
-                self.interactor?.notification(option: "padawan")
             case 3:
                 print("Rate us selected")
             default:
@@ -109,26 +131,27 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
         {
             switch indexPath.section {
             case 0:
-                print("Any ")
                 
                 if let cell = tableView.cellForRow(at: indexPath) {
                     interactor?.allGroupCheckmark(cell: cell)
-                    
-                    }
+                }
             case 1:
-                
                 if let cell = tableView.cellForRow(at: indexPath) {
                     interactor?.justOneCheckmark(cellType: .Themes, cell: cell, tableView: tableView)
-                    
                 }
 
-                delegate?.chanceThemeClicked(name: "dark.png")//sor burayi????
+
+                delegate?.chanceThemeClicked(name: "dark.jpg")//sor burayi????
 
                
+
+               // delegate?.chanceThemeClicked(name: "shrek")
+
             case 2:
                 print("Once a day ")
                 if let cell = tableView.cellForRow(at: indexPath) {
                     interactor?.justOneCheckmark(cellType: .Notification, cell: cell, tableView: tableView)
+                    interactor?.notification(option: "Once a day")
                 }
             default:
                 print("out of range")
@@ -141,22 +164,21 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
                 print("Music  ")
                 if let cell = tableView.cellForRow(at: indexPath) {
                     interactor?.allGroupCheckmark(cell: cell)
-                    
-                    }
-                
+                }
             case 1:
                 print("L'ght  Mode ")
                 if let cell = tableView.cellForRow(at: indexPath) {
                     interactor?.justOneCheckmark(cellType: .Themes, cell: cell, tableView: tableView)
                   //  interactor?.selectThemes()
             //        delegate?.chanceThemeClicked(name: "light.png")
-                    router?.changeBackground(image: "light.png")
+                    router?.changeBackground(image: "light.jpg")
                     
                 }
             case 2:
                 print("Off ")
                 if let cell = tableView.cellForRow(at: indexPath) {
                     interactor?.justOneCheckmark(cellType: .Notification, cell: cell, tableView: tableView)
+                    interactor?.notification(option: "off")
                 }
             default:
                 print("out of range")
@@ -169,12 +191,12 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
                 print("programing   ")
                 if let cell = tableView.cellForRow(at: indexPath) {
                     interactor?.allGroupCheckmark(cell: cell)
-                    
-                    }
+                }
             case 2:
                 print("costum  ")
                 if let cell = tableView.cellForRow(at: indexPath) {
                     interactor?.justOneCheckmark(cellType: .Notification, cell: cell, tableView: tableView)
+                    interactor?.notification(option: "custom")
                 }
             default:
                 print("out of range")
@@ -192,10 +214,10 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
 
                     
                     }
+                
             default:
                 print("out of range")
             }
-            
         }
         else if indexPath.row == 5
         {
@@ -204,12 +226,10 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
                 print("Pun   ")
                 if let cell = tableView.cellForRow(at: indexPath) {
                     interactor?.allGroupCheckmark(cell: cell)
-                    
-                    }
+                }
             default:
                 print("out of range")
             }
-            
         }
         else if indexPath.row == 6
         {
@@ -218,12 +238,10 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
                 print("Spooky    ")
                 if let cell = tableView.cellForRow(at: indexPath) {
                     interactor?.allGroupCheckmark(cell: cell)
-                    
-                    }
+                }
             default:
                 print("out of range")
             }
-            
         }
         else if indexPath.row == 7
         {
@@ -232,16 +250,14 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
                 print("Crismas    ")
                 if let cell = tableView.cellForRow(at: indexPath) {
                     interactor?.allGroupCheckmark(cell: cell)
-                    
-                    }
+                }
             default:
                 print("out of range")
             }
-            
         }
         
-            
-            
+        
+        
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
@@ -253,6 +269,19 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
         else{
             cell.textLabel?.text = sections[indexPath.section].options[indexPath.row-1]
             cell.backgroundColor = .cyan
+            if sections[indexPath.section].title == MenuList.Categories.rawValue  {
+                let tempList = keepCategories.array(forKey: UserDefaultKey.categories.rawValue)
+                if tempList == nil {
+                    cell.accessoryType = .checkmark
+                }
+                else{
+                    for title in tempList! {
+                        if sections[indexPath.section].options[indexPath.row-1] == title as! String {
+                            cell.accessoryType = .checkmark
+                        }
+                    }
+                }
+            }
         }
         return cell
     }

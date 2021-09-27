@@ -21,6 +21,7 @@ protocol SettingsInteractorProtocol {
     
 }
 
+
 class SettingsInteractor : SettingsInteractorProtocol{
     
     var presenter : SettingsPresenterProtocol?
@@ -39,14 +40,13 @@ class SettingsInteractor : SettingsInteractorProtocol{
     }
     
     func notification(option : String) {
-        presenter?.presentNotification(title: "Yeayy", message: "Padawanus")
+        let center = UNUserNotificationCenter.current()
+        center.removeAllPendingNotificationRequests()
         switch option {
         case "Once a day":
             sendNotification(hour: 15, minute: 00)
             presenter?.presentNotification(title: "Once a day", message: "Your notifications will send at once a day")
         case "off":
-            let center = UNUserNotificationCenter.current()
-            center.removeAllPendingNotificationRequests()
             presenter?.presentNotification(title: "Off", message: "Your notifications closed")
         case "custom":
             sendNotification(hour: customHour.integer(forKey: "Hour"), minute: customMinute.integer(forKey: "Minute"))
@@ -60,6 +60,7 @@ class SettingsInteractor : SettingsInteractorProtocol{
     func rateUs() {
 //        <#code#>
     }
+    
     
     func sendNotification(hour: Int, minute: Int){
         let center = UNUserNotificationCenter.current()

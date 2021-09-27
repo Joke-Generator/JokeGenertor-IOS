@@ -15,6 +15,7 @@ protocol JokeGenerateProtocol : NSObjectProtocol {
     func shareJoke(chosenJoke : UIActivityViewController)
     func toSettings(menu: SideMenuNavigationController)
     func showRandomImage(imageName : String)
+  //  func chanceThemeClicked(name: String)
     
 
 }
@@ -40,8 +41,9 @@ class JokeGenerateController: UIViewController, JokeGenerateProtocol, SettingsCo
         let settingsView = SettingsViewController()
         settingsView.delegate = self
         menu = SideMenuNavigationController(rootViewController: settingsView)
-        //JokeAPI().alamofireFetch(completion: JokeResponseCompletion)
+        //JokeAPI().getMethod()
 
+        
     }
  
     

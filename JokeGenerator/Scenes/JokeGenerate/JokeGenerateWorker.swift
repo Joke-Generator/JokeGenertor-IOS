@@ -11,12 +11,34 @@ import Foundation
 class JokeGenerateWorker  {
     
     func fetch() -> GeneralJoke{
+        var tempCategories : [String]
+        if SettingsViewController().keepCategories.value(forKey: UserDefaultKey.categories.rawValue) != nil{
+            tempCategories = SettingsViewController().keepCategories.value(forKey: UserDefaultKey.categories.rawValue) as! [String]
+        }
+        else{
+            tempCategories = ["Any"]
+        }
+        
+        
+        var categories = ""
+//        var isChristmas = true
+        for i in 0...tempCategories.count-1 {
+            if i == tempCategories.count-1{
+                categories += "\(tempCategories[i])"
+            }else{
+                categories += "\(tempCategories[i]),"
+            }
+//            if tempCategories[i] == JokesCategory.Christmas.rawValue {
+//                isChristmas = false
+//            }
+        }
         var temp : GeneralJoke? = nil
         let semaphore = DispatchSemaphore (value: 0)
         let randomNum = Int.random(in: 0..<10)
         var request : URLRequest
+//        if randomNum < 5 && isChristmas
         if randomNum < 5{
-            request = URLRequest(url: URL(string: "https://v2.jokeapi.dev/joke/Programming,Miscellaneous,Dark,Pun,Spooky,Christmas?type=\(JokeType.single)")!,timeoutInterval: Double.infinity)
+            request = URLRequest(url: URL(string: "https://v2.jokeapi.dev/joke/\(categories)?type=\(JokeType.single)")!,timeoutInterval: Double.infinity)
             request.httpMethod = "GET"
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
                 guard let data = data else {
@@ -36,7 +58,7 @@ class JokeGenerateWorker  {
             semaphore.wait()
         }
         else{
-            request = URLRequest(url: URL(string: "https://v2.jokeapi.dev/joke/Programming,Miscellaneous,Dark,Pun,Spooky,Christmas?type=\(JokeType.twoPart)")!,timeoutInterval: Double.infinity)
+            request = URLRequest(url: URL(string: "https://v2.jokeapi.dev/joke/\(categories)?type=\(JokeType.twoPart)")!,timeoutInterval: Double.infinity)
             request.httpMethod = "GET"
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
                 guard let data = data else {
@@ -60,4 +82,3 @@ class JokeGenerateWorker  {
         return temp!
     }
 }
-

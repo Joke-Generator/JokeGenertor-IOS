@@ -1,49 +1,46 @@
-//import Foundation
-//import Alamofire
-////Requestlerimizi başlatmak için AF. request’e baseUrl+gitmek istediğimiz yolu yazarak request yapılacak yeri belirliyoruz.
+import Foundation
+import Alamofire
+//Requestlerimizi başlatmak için AF. request’e baseUrl+gitmek istediğimiz yolu yazarak request yapılacak yeri belirliyoruz.
+
+private let randomURL = "https://v2.jokeapi.dev/joke/Programming,Miscellaneous,Dark,Pun,Spooky,Christmas?type=\(JokeType.single)"
+var temp : GeneralJoke? = nil
+
+typealias JokeResponseCompletion = () -> JokeSingle
+class JokeAPI {
+
+// MARK: - Alamofire get request
+    
+    func getMethod() {
+
+        AF.request(randomURL).response { response in
+            debugPrint(response)
+            
+            switch response.result {
+            case .success(let data):
+                var joke : JokeSingle
+                do{
+                    joke  = try JSONDecoder().decode(JokeSingle.self, from : (response.data)!)
+                    temp = GeneralJoke(joke: joke.joke, category: joke.category)
+                    print(temp?.joke)
+                }catch{
+                    print(error)
+                }
+            case .failure(let error):
+                print("Something went wrong: \(error)")
+            }
+
+            debugPrint(response.result)
+        }
+}
+        }
+    //    Session.default.request(randomURL).responseJSON { response in
+
+           
+    
+    
+
 //
-//private let randomURL = "https://v2.jokeapi.dev/joke/Programming,Miscellaneous,Dark,Pun,Spooky,Christmas?type=\(JokeType.single)"
-//typealias JokeResponseCompletion = () -> JokeSingle
-//class JokeAPI {
-//
-//// MARK: - Alamofire get request
-//    
-//func alamofireFetch(completion: @escaping JokeResponseCompletion) {
-//        AF.request(randomURL, method: .get )
-//            .validate()
-//            .responseJSON { dataResponse in
-//                switch dataResponse.result {
-//                case .success(let value):
-//                    guard let jokeSingle_ = value as? [String: Any] else {return}
-//                    DispatchQueue.main.async {
-//                   let randomJoke = self.parseJoke(json: jokeSingle_)
-//          //          completion(randomJoke)
-//                        print(jokeSingle_)
-//                    }
-//                case .failure(let error):
-//                    print(error)
-//                }
-//            }
-//    }
-//    
-//
-//// MARK: - JSON parsin method
-//
-//private func parseJoke(json: [String: Any]) -> JokeSingle {
-//    let error = json["error"] as? Bool ?? true
-//    let category = json["category"] as? String ?? ""
-//    let type = json["type"] as? String ?? ""
-//    let joke = json["joke"] as? String ?? ""
-//    let flags = json["flags"] as? [Flags]?
-//    let id = json["id"] as? Int ?? 1
-//    let safe = json["safe"] as? Bool ?? true
-//    let lang = json["lang"] as? String ?? ""
-//
-//   //let jokeSingle_ = JokeSingle(error:error, category: category, type: type, joke: joke, flags:flags!, id:id,safe: true,lang: "")
-//
-//    return jokeSingle_
-//    }
-//}
-//
-//
-//
+        
+     
+
+        
