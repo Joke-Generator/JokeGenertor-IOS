@@ -31,7 +31,6 @@ class JokeGenerateController: UIViewController, JokeGenerateProtocol, SettingsCo
     
     @IBOutlet weak var jokeImageViewController: UIImageView!
     
-    @IBOutlet weak var themeImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
