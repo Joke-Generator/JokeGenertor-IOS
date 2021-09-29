@@ -11,7 +11,15 @@ import Foundation
 class JokeGenerateWorker  {
     
     func fetch() -> GeneralJoke{
-        let tempCategories : [String] = SettingsViewController().keepCategories.value(forKey: UserDefaultKey.categories.rawValue) as! [String]
+        var tempCategories : [String]
+        if SettingsViewController().keepCategories.value(forKey: UserDefaultKey.categories.rawValue) != nil{
+            tempCategories = SettingsViewController().keepCategories.value(forKey: UserDefaultKey.categories.rawValue) as! [String]
+        }
+        else{
+            tempCategories = ["Any"]
+        }
+        
+        
         var categories = ""
 //        var isChristmas = true
         for i in 0...tempCategories.count-1 {
@@ -74,4 +82,3 @@ class JokeGenerateWorker  {
         return temp!
     }
 }
-

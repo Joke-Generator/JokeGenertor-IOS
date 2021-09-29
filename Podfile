@@ -6,5 +6,5 @@ target 'JokeGenerator' do
   use_frameworks!
 
 pod 'SideMenu'
-
+pod 'Alamofire', '~> 5.4'
 end

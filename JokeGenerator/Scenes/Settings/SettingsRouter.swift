@@ -10,6 +10,8 @@ import Foundation
 protocol SettingsRouterProtocol {
     //
     func toJokeGenerate()
+    func changeBackground(image:String) 
+   
    
 }
 
@@ -21,6 +23,10 @@ class SettingsRouter : SettingsRouterProtocol {
     func toJokeGenerate(){
         //to main view
         
+    }
+    func changeBackground(image:String){
+        viewController?.delegate?.chanceThemeClicked(name: image)
+
     }
     
     

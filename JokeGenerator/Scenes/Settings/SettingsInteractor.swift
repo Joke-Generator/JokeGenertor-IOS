@@ -21,6 +21,7 @@ protocol SettingsInteractorProtocol {
     
 }
 
+
 class SettingsInteractor : SettingsInteractorProtocol{
     
     var presenter : SettingsPresenterProtocol?
@@ -59,6 +60,7 @@ class SettingsInteractor : SettingsInteractorProtocol{
     func rateUs() {
 //        <#code#>
     }
+    
     
     func sendNotification(hour: Int, minute: Int){
         let center = UNUserNotificationCenter.current()

@@ -70,6 +70,7 @@ enum cellCheckmarkType{
 enum UserDefaultKey : String {
     case categories = "selected"
     case notification = "notification"
+    case background = "image"
 }
 //enum SettingOptions {
 //    case categories
