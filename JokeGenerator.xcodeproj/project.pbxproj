@@ -25,7 +25,7 @@
 		0DAE977F26C8524B00587E72 /* JokeGenerateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAE977E26C8524B00587E72 /* JokeGenerateInteractor.swift */; };
 		0DAE978126C8525C00587E72 /* JokeGeneratePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAE978026C8525C00587E72 /* JokeGeneratePresenter.swift */; };
 		0DAE978326C852AC00587E72 /* JokeGenerateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAE978226C852AC00587E72 /* JokeGenerateRouter.swift */; };
-<<<<<<< HEAD
+
 		C8FED65326FE042F0074392C /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8FED62426FDFB700074392C /* WidgetKit.framework */; };
 		C8FED65426FE042F0074392C /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8FED62626FDFB700074392C /* SwiftUI.framework */; };
 		C8FED65726FE042F0074392C /* Joke_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FED65626FE042F0074392C /* Joke_Widget.swift */; };
@@ -42,10 +42,12 @@
 		C8FED66B26FE69E60074392C /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D48FE3B26CC4A93009B16C3 /* SettingsRouter.swift */; };
 		C8FED66C26FE69E90074392C /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D48FE3D26CC4B51009B16C3 /* SettingsModel.swift */; };
 		C8FED66D26FE6A120074392C /* JokeGenerateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D48FE2D26CB14A4009B16C3 /* JokeGenerateModel.swift */; };
-=======
+
 		112766C526F5FB590038D799 /* light.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 112766C426F5FB580038D799 /* light.jpg */; };
 		112766C726F5FB5E0038D799 /* dark.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 112766C626F5FB5E0038D799 /* dark.jpg */; };
->>>>>>> 1f215be0c15cf3c3c389ce4ced36f7b3bd2728d0
+
+		112766C526F5FB590038D799 /* light.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 112766C426F5FB580038D799 /* light.jpg */; };
+		112766C726F5FB5E0038D799 /* dark.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 112766C626F5FB5E0038D799 /* dark.jpg */; };
 		EA22CF250BFFBDF670E82970 /* Pods_JokeGenerator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF44FE38845F4B62772AC734 /* Pods_JokeGenerator.framework */; };
 /* End PBXBuildFile section */
 
