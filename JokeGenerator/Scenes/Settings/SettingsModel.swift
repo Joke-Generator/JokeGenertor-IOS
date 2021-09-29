@@ -6,25 +6,14 @@
 //
 
 import Foundation
-import UIKit
 
 
-protocol SettingsControlDelegate {
-    func chanceThemeClicked(name: String)
-}
-
-class Section{
-    let title: String
-    let options:[String]
-    var isOpened : Bool = false
-    init(title: String,
-         options:[String],
-         isOpened : Bool = false) {
-        self.title = title
-        self.options = options
-        self.isOpened = isOpened
-        
-    }
+struct Settings
+{
+//    var category = Category[Categorys.JokesCategory]
+    var themes = Themes.self
+    var notification = Bool.self
+    
 }
 
 enum JokesCategory : String {
@@ -42,12 +31,35 @@ enum MenuList : String {
     case Themes = "Themes"
     case Notifications = "Notifications"
     case RateUs = "Rate Us"
+    
 }
 
-enum NotificationType : String {
-    case OnceADay = "Once a day"
-    case Off = "Off"
-    case Custom = "Custom"
+
+class Section{
+    let title: String
+    let options:[String]
+    var isOpened : Bool = false
+    init(title: String,
+         options:[String],
+         isOpened : Bool = false) {
+        self.title = title
+        self.options = options
+        self.isOpened = isOpened
+        
+    }
+}
+
+enum Themes
+{
+    case Yellow
+    case Blue
+    case Black
+    case Green
+    case AddOther
+}
+
+protocol SettingsControlDelegate {
+    func chanceThemeClicked(name: String)
 }
 
 enum cellCheckmarkType{
@@ -58,26 +70,10 @@ enum cellCheckmarkType{
 enum UserDefaultKey : String {
     case categories = "selected"
     case notification = "notification"
-    case hour = "Hour"
-    case minute = "Minute"
-    
-    
 }
-
-extension UIToolbar {
-    
-    func ToolbarPiker(mySelect : Selector) -> UIToolbar {
-        
-        let toolBar = UIToolbar()
-        toolBar.barStyle = UIBarStyle.default
-        toolBar.isTranslucent = true
-        toolBar.tintColor = UIColor.black
-        toolBar.sizeToFit()
-        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: self, action: mySelect)
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        toolBar.setItems([ spaceButton, doneButton], animated: false)
-        toolBar.isUserInteractionEnabled = true
-        return toolBar
-    }
-    
-}
+//enum SettingOptions {
+//    case categories
+//    case themas
+//    case notification
+//    case rateUs
+//}

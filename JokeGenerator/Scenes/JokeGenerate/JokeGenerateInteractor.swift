@@ -27,6 +27,8 @@ class JokeGenerateInteractor : JokeGenerateInteractorProtocol {
     
     
     func jokeRequestInitiated(request: Any) {
+// interactor call worker for getting joke and after get response, send to presenter
+// func can take parameters which is necessery
         //TODO
         
         
