@@ -125,7 +125,7 @@ class SettingsInteractor : SettingsInteractorProtocol{
         {
             cell.accessoryType.self = .checkmark
         }
-        
+
     }
   
     

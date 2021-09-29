@@ -79,7 +79,7 @@ open class DatePickerCell: UITableViewCell {
     /// Label on the right side of the cell.
     open var rightLabel = UILabel()
     /// Color of the right label. Default is the color of a normal detail label.
-    open var rightLabelTextColor = UIColor(hue: 0.639, saturation: 0.041, brightness: 0.576, alpha: 1.0) {
+    open var rightLabelTextColor = UIColor.systemPink {
         didSet {
             rightLabel.textColor = rightLabelTextColor
         }
@@ -116,14 +116,20 @@ open class DatePickerCell: UITableViewCell {
         let views = [leftLabel, rightLabel, seperator, datePickerContainer, datePicker]
         for view in views {
             self.contentView .addSubview(view)
+            //main cell view background color 
+            contentView.backgroundColor = .cyan
+            view.backgroundColor = .brown
             view.translatesAutoresizingMaskIntoConstraints = false
         }
         
         datePickerContainer.clipsToBounds = true
+        datePickerContainer.backgroundColor = .blue
+//        datePicker.backgroundColor = .brown
+        
         datePickerContainer.addSubview(datePicker)
         
         // Add a seperator between the date text display, and the datePicker. Lighter grey than a normal seperator.
-        seperator.lockedBackgroundColor = UIColor(white: 0, alpha: 0.1)
+        seperator.lockedBackgroundColor = UIColor.cyan
         datePickerContainer.addSubview(seperator)
         datePickerContainer.addConstraints([
             NSLayoutConstraint(
