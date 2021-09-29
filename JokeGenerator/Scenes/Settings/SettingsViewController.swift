@@ -145,9 +145,7 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
             switch indexPath.section {
             case 0:
                 
-                if let cell = tableView.cellForRow(at: indexPath) {
-//                    interactor?.allGroupCheckmark(cell: cell)
-                }
+               print("Misc")
             case 1:
                 if let cell = tableView.cellForRow(at: indexPath) {
                     interactor?.justOneCheckmark(cellType: .Themes, cell: cell, tableView: tableView)
@@ -169,9 +167,7 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
             switch indexPath.section {
             case 0:
                 print("Music  ")
-                if let cell = tableView.cellForRow(at: indexPath) {
-//                    interactor?.allGroupCheckmark(cell: cell)
-                }
+                
             case 1:
                 print("L'ght  Mode ")
                 if let cell = tableView.cellForRow(at: indexPath) {
@@ -195,9 +191,7 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
             switch indexPath.section {
             case 0:
                 print("programing   ")
-                if let cell = tableView.cellForRow(at: indexPath) {
-//                    interactor?.allGroupCheckmark(cell: cell)
-                }
+                
             case 2:
                 let cell = self.tableView.cellForRow(at: indexPath)
                 if (cell is DatePickerCell) {
@@ -218,12 +212,8 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
             switch indexPath.section {
             case 0:
                 print("Dark    ")
+                delegate?.chanceThemeClicked(name: "dark.jpg")
 
-                if let cell = tableView.cellForRow(at: indexPath) {
-//                    interactor?.allGroupCheckmark(cell: cell)
-                    delegate?.chanceThemeClicked(name: "dark.jpg")
-
-                }
             default:
                 print("out of range")
             }
@@ -233,9 +223,7 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
             switch indexPath.section {
             case 0:
                 print("Pun   ")
-                if let cell = tableView.cellForRow(at: indexPath) {
-//                    interactor?.allGroupCheckmark(cell: cell)
-                }
+                
             default:
                 print("out of range")
             }
@@ -245,9 +233,7 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
             switch indexPath.section {
             case 0:
                 print("Spooky    ")
-                if let cell = tableView.cellForRow(at: indexPath) {
-//                    interactor?.allGroupCheckmark(cell: cell)
-                }
+                
             default:
                 print("out of range")
             }
@@ -257,9 +243,7 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
             switch indexPath.section {
             case 0:
                 print("Crismas    ")
-                if let cell = tableView.cellForRow(at: indexPath) {
-//                    interactor?.allGroupCheckmark(cell: cell)
-                }
+                
             default:
                 print("out of range")
             }
@@ -295,7 +279,7 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
             }
 
             if keepNotification.value(forKey: UserDefaultKey.notification.rawValue) == nil {
-                keepNotification.set("Off", forKey: UserDefaultKey.notification.rawValue)
+                keepNotification.set(NotificationType.Off.rawValue, forKey: UserDefaultKey.notification.rawValue)
 
             }
             if sections[indexPath.section].options[indexPath.row-1] == keepNotification.value(forKey: UserDefaultKey.notification.rawValue) as! String{
