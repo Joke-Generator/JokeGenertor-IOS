@@ -15,6 +15,7 @@ protocol JokeGenerateProtocol : NSObjectProtocol {
     func shareJoke(chosenJoke : UIActivityViewController)
     func toSettings(menu: SideMenuNavigationController)
     func showRandomImage(imageName : String)
+  //  func chanceThemeClicked(name: String)
     
 
 }
@@ -26,11 +27,13 @@ class JokeGenerateController: UIViewController, JokeGenerateProtocol, SettingsCo
     var router : (NSObjectProtocol&JokeGenerateRouterProtocol)?
     var tempJoke : GeneralJoke?
     var menu : SideMenuNavigationController?
+    
         
     @IBOutlet weak var jokeLabel: UILabel!
     
     @IBOutlet weak var jokeImageViewController: UIImageView!
     
+    @IBOutlet weak var themeImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +41,8 @@ class JokeGenerateController: UIViewController, JokeGenerateProtocol, SettingsCo
         let settingsView = SettingsViewController()
         settingsView.delegate = self
         menu = SideMenuNavigationController(rootViewController: settingsView)
+        //JokeAPI().getMethod()
+
         
     }
  
@@ -57,6 +62,7 @@ class JokeGenerateController: UIViewController, JokeGenerateProtocol, SettingsCo
         router.viewController = viewController
         interactor.refresh()
         interactor.randomSelectImage()
+        
      
     }
     
@@ -80,7 +86,7 @@ class JokeGenerateController: UIViewController, JokeGenerateProtocol, SettingsCo
     func chanceThemeClicked(name: String) {
         // TO DO
         print("Yeay its main view")
-        jokeImageViewController.image = UIImage(named: name)
+        themeImage.image = UIImage(named: name)
     }
     
     func shareJoke(chosenJoke : UIActivityViewController) {

@@ -22,6 +22,7 @@ protocol SettingsInteractorProtocol {
     
 }
 
+
 class SettingsInteractor : SettingsInteractorProtocol{
     
     var presenter : SettingsPresenterProtocol?
@@ -72,6 +73,7 @@ class SettingsInteractor : SettingsInteractorProtocol{
           
           
       }
+    
     
     func sendNotification(hour: Int, minute: Int){
         let center = UNUserNotificationCenter.current()
