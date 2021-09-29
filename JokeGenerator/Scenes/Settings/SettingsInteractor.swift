@@ -8,6 +8,7 @@
 import Foundation
 import UserNotifications
 import UIKit
+import StoreKit
 
 
 protocol SettingsInteractorProtocol {
@@ -15,7 +16,7 @@ protocol SettingsInteractorProtocol {
     func selectCategories()
     func selectThemes()
     func notification(option: String)
-    func rateUs()
+    func rateUs(id: String)
     func allGroupCheckmark(cell: UITableViewCell  )
     func justOneCheckmark (cellType :cellCheckmarkType , cell : UITableViewCell , tableView : UITableView  )
     
@@ -56,9 +57,21 @@ class SettingsInteractor : SettingsInteractorProtocol{
         
     }
     
-    func rateUs() {
-//        <#code#>
-    }
+    func rateUs(id: String) {
+        
+          //print("deneme")
+          presenter?.presentRateUs(rate: UIViewController())
+          switch id{
+          case "Rate Us":
+              if  let url = URL(string: "itms-apps://itunes.apple.com/app/" + "appId") {
+                 UIApplication.shared.open(url, options: [:], completionHandler: nil)//shared openda hata var 
+              }
+          default:
+              print("Hata")
+          }
+          
+          
+      }
     
     func sendNotification(hour: Int, minute: Int){
         let center = UNUserNotificationCenter.current()

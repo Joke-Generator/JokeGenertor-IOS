@@ -13,7 +13,7 @@ protocol SettingsProtocol {
     func selectCategories()
     func selectThemes()
     func notification(alert : UIAlertController)
-    func rateUs()
+    func rateUs(rate: UIViewController)
 }
 
 class SettingsViewController: UITableViewController,SettingsProtocol{
@@ -69,8 +69,8 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
         
     }
     
-    func rateUs() {
-        //        <#code#>
+    func rateUs(rate: UIViewController) {
+       
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -12,9 +12,15 @@ protocol SettingsPresenterProtocol {
     //
     func presentSettings()
     func presentNotification(title : String, message : String)
+    func presentRateUs(rate: UIViewController)
 }
 
 class SettingsPresenter: SettingsPresenterProtocol {
+    
+    func presentRateUs(rate: UIViewController) {
+        
+        viewController?.rateUs(rate: rate)
+    }
     
     var viewController : SettingsProtocol?
     
