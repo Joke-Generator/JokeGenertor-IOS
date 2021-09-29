@@ -13,6 +13,7 @@ struct Settings
 //    var category = Category[Categorys.JokesCategory]
     var themes = Themes.self
     var notification = Bool.self
+    var rateUs = Bool.self
     
 }
 
