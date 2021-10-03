@@ -24,15 +24,18 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
     var delegate : SettingsControlDelegate?
     
     var keepCategories = UserDefaults.standard
+    var keepNotification = UserDefaults.standard
     
     var selectedCategories : [String] = ["Misc","Programming","Dark","Pun","Spooky","Christmas"]
-   
+    
     var  sections = [
-        Section(title: "Categories", options: ["Misc","Programming","Dark","Pun","Spooky","Christmas"].compactMap({return "\($0)"})),
-        Section(title: "Themes ", options: ["Dark ", "Light "].compactMap({return "\($0) Mode "})),
-        Section(title: "Notifications", options: ["Once a day","Off","Custom"].compactMap({return "\($0)"})),
-        Section(title: "Rate Us", options: [].compactMap({return "Cell \($0)"})),
+        Section(title: "Categories", options: ["Misc","Programming","Dark","Pun","Spooky","Christmas"]),
+        Section(title: "Themes ", options: ["Dark", "Light"].compactMap({return "\($0) Mode"})),
+        Section(title: "Notifications", options: ["Once a day","Off","Custom"]),
+        Section(title: "Rate Us", options: [])
     ]
+    
+    var cells = [UIView]()
     
     override func viewDidLoad() {
         
@@ -41,6 +44,9 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
         if keepCategories.array(forKey: UserDefaultKey.categories.rawValue) != nil{
             selectedCategories = (keepCategories.array(forKey: UserDefaultKey.categories.rawValue) as! [String])
         }
+        let datePickerCell = DatePickerCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: nil)
+        cells = [datePickerCell]
+        
     }
     
     func setup(){
@@ -70,7 +76,7 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
     }
     
     func rateUs(rate: UIViewController) {
-       
+        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -89,15 +95,23 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0  {
+            sections[indexPath.section].isOpened = !sections[indexPath.section].isOpened
+            tableView.reloadSections([indexPath.section], with: .none)
+        }
+                    
         tableView.deselectRow(at: indexPath, animated: true)
         if let cell = tableView.cellForRow(at: indexPath) {
+            
             if indexPath.row != 0
             {
+                // Category selection
                 if cell.accessoryType.self == .checkmark
                 {
                     if sections[indexPath.section].title == MenuList.Categories.rawValue {
                         selectedCategories = selectedCategories.filter { $0 != sections[indexPath.section].options[indexPath.row-1] }
                         keepCategories.setValue(selectedCategories, forKey: UserDefaultKey.categories.rawValue)
+                        interactor?.allGroupCheckmark(cell: cell)
                     }
                 }
                 else if cell.accessoryType.self == .none
@@ -105,156 +119,47 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
                     if sections[indexPath.section].title == MenuList.Categories.rawValue {
                         selectedCategories.append(sections[indexPath.section].options[indexPath.row-1])
                         keepCategories.setValue(selectedCategories, forKey: UserDefaultKey.categories.rawValue)
+                        interactor?.allGroupCheckmark(cell: cell)
                     }
                 }
-            }
-        }
-        
-        
-        if indexPath.row == 0  {
-            sections[indexPath.section].isOpened = !sections[indexPath.section].isOpened
-            tableView.reloadSections([indexPath.section], with: .none)
-            switch indexPath.section {
-            case 0:
-                print("Categories selected")
-            case 1:
-                print("Themes selected")
-            case 2:
-                print("Notification selected")
-            case 3:
-                print("Rate us selected")
-            default:
-                print("out of range")
-            }
-        }
-        else if indexPath.row == 1
-        {
-            switch indexPath.section {
-            case 0:
-                
-                if let cell = tableView.cellForRow(at: indexPath) {
-                    interactor?.allGroupCheckmark(cell: cell)
-                }
-            case 1:
-                if let cell = tableView.cellForRow(at: indexPath) {
+                //Theme Selection
+                if sections[indexPath.section].options[indexPath.row-1] == Themes.DarkMode.rawValue {
                     interactor?.justOneCheckmark(cellType: .Themes, cell: cell, tableView: tableView)
+                    delegate?.chanceThemeClicked(name: "dark.jpg")
                 }
-
-
-                delegate?.chanceThemeClicked(name: "dark.jpg")//sor burayi????
-
-               
-
-               // delegate?.chanceThemeClicked(name: "shrek")
-
-            case 2:
-                print("Once a day ")
-                if let cell = tableView.cellForRow(at: indexPath) {
-                    interactor?.justOneCheckmark(cellType: .Notification, cell: cell, tableView: tableView)
-                    interactor?.notification(option: "Once a day")
-                }
-            default:
-                print("out of range")
-            }
-        }
-        else if indexPath.row == 2
-        {
-            switch indexPath.section {
-            case 0:
-                print("Music  ")
-                if let cell = tableView.cellForRow(at: indexPath) {
-                    interactor?.allGroupCheckmark(cell: cell)
-                }
-            case 1:
-                print("L'ght  Mode ")
-                if let cell = tableView.cellForRow(at: indexPath) {
+                if sections[indexPath.section].options[indexPath.row-1] == Themes.LightMode.rawValue{
                     interactor?.justOneCheckmark(cellType: .Themes, cell: cell, tableView: tableView)
-                  //  interactor?.selectThemes()
-            //        delegate?.chanceThemeClicked(name: "light.png")
                     router?.changeBackground(image: "light.jpg")
-                    
                 }
-            case 2:
-                print("Off ")
-                if let cell = tableView.cellForRow(at: indexPath) {
-                    interactor?.justOneCheckmark(cellType: .Notification, cell: cell, tableView: tableView)
-                    interactor?.notification(option: "off")
-                }
-            default:
-                print("out of range")
-            }
-        }
-        else if indexPath.row == 3
-        {
-            switch indexPath.section {
-            case 0:
-                print("programing   ")
-                if let cell = tableView.cellForRow(at: indexPath) {
-                    interactor?.allGroupCheckmark(cell: cell)
-                }
-            case 2:
-                print("costum  ")
-                if let cell = tableView.cellForRow(at: indexPath) {
-                    interactor?.justOneCheckmark(cellType: .Notification, cell: cell, tableView: tableView)
-                    interactor?.notification(option: "custom")
-                }
-            default:
-                print("out of range")
-            }
-        }
-        else if indexPath.row == 4
-        {
-            switch indexPath.section {
-            case 0:
-                print("Dark    ")
-                if let cell = tableView.cellForRow(at: indexPath) {
-                    interactor?.allGroupCheckmark(cell: cell)
-                    interactor?.selectThemes()
-                    delegate?.chanceThemeClicked(name: "dark.png")
-
-                    
-                    }
                 
-            default:
-                print("out of range")
-            }
-        }
-        else if indexPath.row == 5
-        {
-            switch indexPath.section {
-            case 0:
-                print("Pun   ")
-                if let cell = tableView.cellForRow(at: indexPath) {
-                    interactor?.allGroupCheckmark(cell: cell)
+//                Notification Selection
+                if sections[indexPath.section].options[indexPath.row-1] == NotificationType.OnceADay.rawValue{
+                    interactor?.justOneCheckmark(cellType: .Notification, cell: cell, tableView: tableView)
+                    interactor?.notification(option: .OnceADay)
+                    keepNotification.set(NotificationType.OnceADay.rawValue, forKey: UserDefaultKey.notification.rawValue)
                 }
-            default:
-                print("out of range")
-            }
-        }
-        else if indexPath.row == 6
-        {
-            switch indexPath.section {
-            case 0:
-                print("Spooky    ")
-                if let cell = tableView.cellForRow(at: indexPath) {
-                    interactor?.allGroupCheckmark(cell: cell)
+                if sections[indexPath.section].options[indexPath.row-1] == NotificationType.Off.rawValue{
+                    interactor?.justOneCheckmark(cellType: .Notification, cell: cell, tableView: tableView)
+                    interactor?.notification(option: .Off)
+                    keepNotification.set(NotificationType.Off.rawValue, forKey: UserDefaultKey.notification.rawValue)
                 }
-            default:
-                print("out of range")
-            }
-        }
-        else if indexPath.row == 7
-        {
-            switch indexPath.section {
-            case 0:
-                print("Crismas    ")
-                if let cell = tableView.cellForRow(at: indexPath) {
-                    interactor?.allGroupCheckmark(cell: cell)
+                if sections[indexPath.section].options[indexPath.row-1] == NotificationType.Custom.rawValue{
+                    interactor?.justOneCheckmark(cellType: .Notification, cell: cell, tableView: tableView)
+                    if (cell is DatePickerCell) {
+                        let datePickerTableViewCell = cell as! DatePickerCell
+                        datePickerTableViewCell.selectedInTableView(tableView)
+                        self.tableView.deselectRow(at: indexPath, animated: true)
+                    }
+                    keepNotification.set(NotificationType.Custom.rawValue, forKey: UserDefaultKey.notification.rawValue)
+                    interactor?.notification(option: .Custom)
                 }
-            default:
-                print("out of range")
+            }
+            // Rate Us
+            if sections[indexPath.section].title == MenuList.RateUs.rawValue{
+                router?.rateUS()
             }
         }
+        
         
         
         
@@ -265,8 +170,10 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
         {
             cell.textLabel?.text = sections[indexPath.section].title
             cell.backgroundColor = .systemRed
+            cell.accessoryType = .none
         }
         else{
+            cell.accessoryType = .none
             cell.textLabel?.text = sections[indexPath.section].options[indexPath.row-1]
             cell.backgroundColor = .cyan
             if sections[indexPath.section].title == MenuList.Categories.rawValue  {
@@ -282,7 +189,29 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
                     }
                 }
             }
+            if keepNotification.value(forKey: UserDefaultKey.notification.rawValue) == nil {
+                keepNotification.set(NotificationType.Off.rawValue, forKey: UserDefaultKey.notification.rawValue)
+                
+            }
+            if sections[indexPath.section].options[indexPath.row-1] == keepNotification.value(forKey: UserDefaultKey.notification.rawValue) as! String{
+                cell.accessoryType = .checkmark
+                
+            }
+            if sections[indexPath.section].options[indexPath.row-1] == NotificationType.Custom.rawValue{
+                return DatePickerCell()
+            }
         }
         return cell
+    }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        
+        let cell = self.tableView.cellForRow(at: indexPath)
+        
+        if (cell is DatePickerCell) {
+            return (cell as! DatePickerCell).datePickerHeight()
+        }
+        
+        return super.tableView(tableView, heightForRowAt: indexPath)
     }
 }

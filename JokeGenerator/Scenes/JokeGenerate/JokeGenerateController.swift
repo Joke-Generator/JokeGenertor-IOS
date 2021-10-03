@@ -15,20 +15,21 @@ protocol JokeGenerateProtocol : NSObjectProtocol {
     func shareJoke(chosenJoke : UIActivityViewController)
     func toSettings(menu: SideMenuNavigationController)
     func showRandomImage(imageName : String)
-  //  func chanceThemeClicked(name: String)
     
-
+    //  func chanceThemeClicked(name: String)
+    
+    
 }
 
 class JokeGenerateController: UIViewController, JokeGenerateProtocol, SettingsControlDelegate {
     
-
+    
     var interactor : JokeGenerateInteractorProtocol?
     var router : (NSObjectProtocol&JokeGenerateRouterProtocol)?
     var tempJoke : GeneralJoke?
     var menu : SideMenuNavigationController?
     
-        
+    
     @IBOutlet weak var jokeLabel: UILabel!
     
     @IBOutlet weak var jokeImageViewController: UIImageView!
@@ -41,13 +42,11 @@ class JokeGenerateController: UIViewController, JokeGenerateProtocol, SettingsCo
         let settingsView = SettingsViewController()
         settingsView.delegate = self
         menu = SideMenuNavigationController(rootViewController: settingsView)
-        //JokeAPI().getMethod()
-
         
     }
- 
     
-   
+    
+    
     
     func setup(){
         let viewController = self
@@ -63,7 +62,7 @@ class JokeGenerateController: UIViewController, JokeGenerateProtocol, SettingsCo
         interactor.refresh()
         interactor.randomSelectImage()
         
-     
+        
     }
     
     func successJoke(viewModel: JokeModel.ViewModel) {
@@ -84,22 +83,25 @@ class JokeGenerateController: UIViewController, JokeGenerateProtocol, SettingsCo
     }
     
     func chanceThemeClicked(name: String) {
-        // TO DO
-        print("Yeay its main view")
         themeImage.image = UIImage(named: name)
     }
     
     func shareJoke(chosenJoke : UIActivityViewController) {
         //
         present(chosenJoke, animated: true, completion: nil)
-      
+        
     }
     
     func showRandomImage(imageName: String) {
         jokeImageViewController.image = UIImage(named: imageName)
         
     }
-
+    func rateUs(){
+        if  let url = URL(string: "itms-apps://itunes.apple.com/app/" + "appId") {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)//shared openda hata var
+        }
+    }
+    
     @IBAction func refreshButtonClicked(_ sender: Any) {
         //TODO
         interactor?.refresh()

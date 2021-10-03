@@ -11,7 +11,7 @@ protocol SettingsRouterProtocol {
     //
     func toJokeGenerate()
     func changeBackground(image:String) 
-   
+    func rateUS()
    
 }
 
@@ -27,6 +27,9 @@ class SettingsRouter : SettingsRouterProtocol {
     func changeBackground(image:String){
         viewController?.delegate?.chanceThemeClicked(name: image)
 
+    }
+    func rateUS() {
+        viewController?.delegate?.rateUs()
     }
     
     

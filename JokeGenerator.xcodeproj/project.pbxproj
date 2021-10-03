@@ -16,6 +16,8 @@
 		0D48FE3A26CC4A89009B16C3 /* SettingsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D48FE3926CC4A89009B16C3 /* SettingsWorker.swift */; };
 		0D48FE3C26CC4A93009B16C3 /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D48FE3B26CC4A93009B16C3 /* SettingsRouter.swift */; };
 		0D48FE3E26CC4B51009B16C3 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D48FE3D26CC4B51009B16C3 /* SettingsModel.swift */; };
+		0D7801E32706B38900202BEB /* DatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7801E22706B38900202BEB /* DatePickerCell.swift */; };
+		0D7801E42706B38900202BEB /* DatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7801E22706B38900202BEB /* DatePickerCell.swift */; };
 		0DAE976926C851A100587E72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAE976826C851A100587E72 /* AppDelegate.swift */; };
 		0DAE976B26C851A100587E72 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAE976A26C851A100587E72 /* SceneDelegate.swift */; };
 		0DAE976D26C851A100587E72 /* JokeGenerateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAE976C26C851A100587E72 /* JokeGenerateController.swift */; };
@@ -25,7 +27,8 @@
 		0DAE977F26C8524B00587E72 /* JokeGenerateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAE977E26C8524B00587E72 /* JokeGenerateInteractor.swift */; };
 		0DAE978126C8525C00587E72 /* JokeGeneratePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAE978026C8525C00587E72 /* JokeGeneratePresenter.swift */; };
 		0DAE978326C852AC00587E72 /* JokeGenerateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAE978226C852AC00587E72 /* JokeGenerateRouter.swift */; };
-
+		112766C526F5FB590038D799 /* light.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 112766C426F5FB580038D799 /* light.jpg */; };
+		112766C726F5FB5E0038D799 /* dark.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 112766C626F5FB5E0038D799 /* dark.jpg */; };
 		C8FED65326FE042F0074392C /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8FED62426FDFB700074392C /* WidgetKit.framework */; };
 		C8FED65426FE042F0074392C /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8FED62626FDFB700074392C /* SwiftUI.framework */; };
 		C8FED65726FE042F0074392C /* Joke_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FED65626FE042F0074392C /* Joke_Widget.swift */; };
@@ -42,12 +45,6 @@
 		C8FED66B26FE69E60074392C /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D48FE3B26CC4A93009B16C3 /* SettingsRouter.swift */; };
 		C8FED66C26FE69E90074392C /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D48FE3D26CC4B51009B16C3 /* SettingsModel.swift */; };
 		C8FED66D26FE6A120074392C /* JokeGenerateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D48FE2D26CB14A4009B16C3 /* JokeGenerateModel.swift */; };
-
-		112766C526F5FB590038D799 /* light.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 112766C426F5FB580038D799 /* light.jpg */; };
-		112766C726F5FB5E0038D799 /* dark.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 112766C626F5FB5E0038D799 /* dark.jpg */; };
-
-		112766C526F5FB590038D799 /* light.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 112766C426F5FB580038D799 /* light.jpg */; };
-		112766C726F5FB5E0038D799 /* dark.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 112766C626F5FB5E0038D799 /* dark.jpg */; };
 		EA22CF250BFFBDF670E82970 /* Pods_JokeGenerator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF44FE38845F4B62772AC734 /* Pods_JokeGenerator.framework */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +82,7 @@
 		0D48FE3926CC4A89009B16C3 /* SettingsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWorker.swift; sourceTree = "<group>"; };
 		0D48FE3B26CC4A93009B16C3 /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
 		0D48FE3D26CC4B51009B16C3 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		0D7801E22706B38900202BEB /* DatePickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerCell.swift; sourceTree = "<group>"; };
 		0DAE976526C851A100587E72 /* JokeGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JokeGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DAE976826C851A100587E72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DAE976A26C851A100587E72 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -191,6 +189,7 @@
 				0D48FE2F26CB265C009B16C3 /* Model */,
 				0DAE976826C851A100587E72 /* AppDelegate.swift */,
 				0DAE976A26C851A100587E72 /* SceneDelegate.swift */,
+				0D7801E22706B38900202BEB /* DatePickerCell.swift */,
 				0DAE977C26C851AF00587E72 /* Scenes */,
 				0DAE976E26C851A100587E72 /* Main.storyboard */,
 				0DAE977126C851A500587E72 /* Assets.xcassets */,
@@ -403,6 +402,7 @@
 				0D48FE3626CC4A6F009B16C3 /* SettingsInteractor.swift in Sources */,
 				0DAE978326C852AC00587E72 /* JokeGenerateRouter.swift in Sources */,
 				0DAE976B26C851A100587E72 /* SceneDelegate.swift in Sources */,
+				0D7801E32706B38900202BEB /* DatePickerCell.swift in Sources */,
 				0D48FE2C26CB05FD009B16C3 /* JokeGenerateWorker.swift in Sources */,
 				0D48FE2E26CB14A4009B16C3 /* JokeGenerateModel.swift in Sources */,
 				0D48FE3A26CC4A89009B16C3 /* SettingsWorker.swift in Sources */,
@@ -426,6 +426,7 @@
 				C8FED66826FE69DE0074392C /* SettingsInteractor.swift in Sources */,
 				C8FED66926FE69E00074392C /* SettingsPresenter.swift in Sources */,
 				C8FED66D26FE6A120074392C /* JokeGenerateModel.swift in Sources */,
+				0D7801E42706B38900202BEB /* DatePickerCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

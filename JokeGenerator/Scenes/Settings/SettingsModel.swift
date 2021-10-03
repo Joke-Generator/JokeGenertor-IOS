@@ -8,35 +8,15 @@
 import Foundation
 
 
-struct Settings
-{
-//    var category = Category[Categorys.JokesCategory]
-    var themes = Themes.self
-    var notification = Bool.self
-    var rateUs = Bool.self
-    
-}
 
-enum JokesCategory : String {
+protocol SettingsControlDelegate {
     
-    case Misc = "Miscellaneous"
-    case Programming = "Programming"
-    case Dark = "Dark"
-    case Pun = "Pun"
-    case Spooky = "Spooky"
-    case Christmas = "Christmas"
+    func chanceThemeClicked(name: String)
+    func rateUs()
 }
-
-enum MenuList : String {
-    case Categories = "Categories"
-    case Themes = "Themes"
-    case Notifications = "Notifications"
-    case RateUs = "Rate Us"
-    
-}
-
 
 class Section{
+    
     let title: String
     let options:[String]
     var isOpened : Bool = false
@@ -50,32 +30,56 @@ class Section{
     }
 }
 
-enum Themes
-{
-    case Yellow
-    case Blue
-    case Black
-    case Green
-    case AddOther
+enum JokesCategory : String {
+    
+    case Misc = "Miscellaneous"
+    case Programming = "Programming"
+    case Dark = "Dark"
+    case Pun = "Pun"
+    case Spooky = "Spooky"
+    case Christmas = "Christmas"
+    
 }
 
-protocol SettingsControlDelegate {
-    func chanceThemeClicked(name: String)
+enum MenuList : String {
+    
+    case Categories = "Categories"
+    case Themes = "Themes"
+    case Notifications = "Notifications"
+    case RateUs = "Rate Us"
+    
+}
+
+enum NotificationType : String {
+    case Custom = "Custom"
+    case Off = "Off"
+    case OnceADay = "Once a day"
+    
+}
+
+enum Themes : String {
+    case DarkMode = "Dark Mode"
+    case LightMode = "Light Mode"
 }
 
 enum cellCheckmarkType{
+    
     case Themes
     case Notification
 }
 
 enum UserDefaultKey : String {
+    
     case categories = "selected"
     case notification = "notification"
     case background = "image"
+    case hour = "Hour"
+    case minute = "Minute"
 }
-//enum SettingOptions {
-//    case categories
-//    case themas
-//    case notification
-//    case rateUs
-//}
+
+
+
+
+
+
+

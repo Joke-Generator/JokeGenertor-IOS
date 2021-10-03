@@ -15,7 +15,7 @@ protocol SettingsInteractorProtocol {
     //
     func selectCategories()
     func selectThemes()
-    func notification(option: String)
+    func notification(option: NotificationType)
     func rateUs(id: String)
     func allGroupCheckmark(cell: UITableViewCell  )
     func justOneCheckmark (cellType :cellCheckmarkType , cell : UITableViewCell , tableView : UITableView  )
@@ -28,8 +28,7 @@ class SettingsInteractor : SettingsInteractorProtocol{
     var presenter : SettingsPresenterProtocol?
     var worker : SettingsWorkerProtocol?
     
-    var customHour = UserDefaults.standard
-    var customMinute = UserDefaults.standard
+    var customTime = UserDefaults.standard
     
     
     func selectCategories() {
@@ -37,20 +36,20 @@ class SettingsInteractor : SettingsInteractorProtocol{
     }
     
     func selectThemes() {
-//        <#code#>
+        //        <#code#>
     }
     
-    func notification(option : String) {
+    func notification(option : NotificationType) {
         let center = UNUserNotificationCenter.current()
         center.removeAllPendingNotificationRequests()
         switch option {
-        case "Once a day":
+        case .OnceADay:
             sendNotification(hour: 15, minute: 00)
             presenter?.presentNotification(title: "Once a day", message: "Your notifications will send at once a day")
-        case "off":
+        case .Off:
             presenter?.presentNotification(title: "Off", message: "Your notifications closed")
-        case "custom":
-            sendNotification(hour: customHour.integer(forKey: "Hour"), minute: customMinute.integer(forKey: "Minute"))
+        case .Custom:
+            sendNotification(hour: customTime.integer(forKey: "Hour"), minute: customTime.integer(forKey: "Minute"))
             presenter?.presentNotification(title: "Custom", message: "Your notifications will send at chosen time")
         default:
             print("No, I'm your father")
@@ -60,19 +59,12 @@ class SettingsInteractor : SettingsInteractorProtocol{
     
     func rateUs(id: String) {
         
-          //print("deneme")
-          presenter?.presentRateUs(rate: UIViewController())
-          switch id{
-          case "Rate Us":
-              if  let url = URL(string: "itms-apps://itunes.apple.com/app/" + "appId") {
-                 UIApplication.shared.open(url, options: [:], completionHandler: nil)//shared openda hata var 
-              }
-          default:
-              print("Hata")
-          }
-          
-          
-      }
+        //print("deneme")
+        presenter?.presentRateUs(rate: UIViewController())
+        
+        
+        
+    }
     
     
     
@@ -103,7 +95,7 @@ class SettingsInteractor : SettingsInteractorProtocol{
         switch cellType{
         case .Themes:
             let cellnumber = tableView.indexPath(for: cell)!
-           
+            
             for theme in themesCell {
                 
                 if cellnumber.elementsEqual(theme)
@@ -114,7 +106,7 @@ class SettingsInteractor : SettingsInteractorProtocol{
                 {
                     tableView.cellForRow(at: IndexPath(indexes: theme))?.accessoryType = .none
                 }
-    
+                
             }
         case .Notification:
             let cellnumber = tableView.indexPath(for: cell)!
@@ -125,19 +117,19 @@ class SettingsInteractor : SettingsInteractorProtocol{
                 {
                     cell.accessoryType.self = .checkmark
                 }
-                else 
+                else
                 {
                     tableView.cellForRow(at: IndexPath(indexes: notification))?.accessoryType = .none
                 }
-         
+                
             }
-        
+            
         }
         
     }
     
     
-
+    
     
     func allGroupCheckmark(cell: UITableViewCell  )
     {
@@ -151,6 +143,6 @@ class SettingsInteractor : SettingsInteractorProtocol{
         }
         
     }
-  
+    
     
 }
