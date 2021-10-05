@@ -61,7 +61,7 @@ class JokeGenerateController: UIViewController, JokeGenerateProtocol, SettingsCo
         router.viewController = viewController
         interactor.refresh()
         interactor.randomSelectImage()
-        
+        //bossa light secerse sectigi buradan
         
     }
     

@@ -130,6 +130,9 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
                 if sections[indexPath.section].options[indexPath.row-1] == Themes.LightMode.rawValue{
                     interactor?.justOneCheckmark(cellType: .Themes, cell: cell, tableView: tableView)
                     router?.changeBackground(image: "light.jpg")
+                    
+                                  
+                
                 }
                 
 //                Notification Selection
