@@ -27,8 +27,11 @@
 		0DAE977F26C8524B00587E72 /* JokeGenerateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAE977E26C8524B00587E72 /* JokeGenerateInteractor.swift */; };
 		0DAE978126C8525C00587E72 /* JokeGeneratePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAE978026C8525C00587E72 /* JokeGeneratePresenter.swift */; };
 		0DAE978326C852AC00587E72 /* JokeGenerateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAE978226C852AC00587E72 /* JokeGenerateRouter.swift */; };
+		0DB7DACB270CEE5A00F8FCD6 /* JokeGenerateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7DACA270CEE5A00F8FCD6 /* JokeGenerateService.swift */; };
+		0DB7DACC270CF2B200F8FCD6 /* JokeGenerateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7DACA270CEE5A00F8FCD6 /* JokeGenerateService.swift */; };
 		112766C526F5FB590038D799 /* light.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 112766C426F5FB580038D799 /* light.jpg */; };
 		112766C726F5FB5E0038D799 /* dark.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 112766C626F5FB5E0038D799 /* dark.jpg */; };
+		6AA1D4785ABD88A3209DEB4E /* Pods_Joke_WidgetExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E9BE7745109C534D7F8F00A /* Pods_Joke_WidgetExtension.framework */; };
 		C8FED65326FE042F0074392C /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8FED62426FDFB700074392C /* WidgetKit.framework */; };
 		C8FED65426FE042F0074392C /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8FED62626FDFB700074392C /* SwiftUI.framework */; };
 		C8FED65726FE042F0074392C /* Joke_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FED65626FE042F0074392C /* Joke_Widget.swift */; };
@@ -94,10 +97,13 @@
 		0DAE977E26C8524B00587E72 /* JokeGenerateInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeGenerateInteractor.swift; sourceTree = "<group>"; };
 		0DAE978026C8525C00587E72 /* JokeGeneratePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeGeneratePresenter.swift; sourceTree = "<group>"; };
 		0DAE978226C852AC00587E72 /* JokeGenerateRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeGenerateRouter.swift; sourceTree = "<group>"; };
+		0DB7DACA270CEE5A00F8FCD6 /* JokeGenerateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeGenerateService.swift; sourceTree = "<group>"; };
 		112766C426F5FB580038D799 /* light.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = light.jpg; sourceTree = "<group>"; };
 		112766C626F5FB5E0038D799 /* dark.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dark.jpg; sourceTree = "<group>"; };
+		1E9BE7745109C534D7F8F00A /* Pods_Joke_WidgetExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Joke_WidgetExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		64895F76DAA254E8EFE9A5E0 /* Pods-JokeGenerator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JokeGenerator.release.xcconfig"; path = "Target Support Files/Pods-JokeGenerator/Pods-JokeGenerator.release.xcconfig"; sourceTree = "<group>"; };
 		7C4A2702F9D29FD5B6AB0D1D /* Pods-JokeGenerator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JokeGenerator.debug.xcconfig"; path = "Target Support Files/Pods-JokeGenerator/Pods-JokeGenerator.debug.xcconfig"; sourceTree = "<group>"; };
+		91420648B2A279D2451D1143 /* Pods-Joke-WidgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Joke-WidgetExtension.release.xcconfig"; path = "Target Support Files/Pods-Joke-WidgetExtension/Pods-Joke-WidgetExtension.release.xcconfig"; sourceTree = "<group>"; };
 		C8FED62426FDFB700074392C /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		C8FED62626FDFB700074392C /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		C8FED64D26FE010F0074392C /* WidgetJokeExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetJokeExtension.entitlements; sourceTree = "<group>"; };
@@ -107,6 +113,7 @@
 		C8FED65926FE04320074392C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8FED65B26FE04320074392C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8FED66626FE05180074392C /* Joke-WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Joke-WidgetExtension.entitlements"; sourceTree = "<group>"; };
+		CFA1153B5059512979905E08 /* Pods-Joke-WidgetExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Joke-WidgetExtension.debug.xcconfig"; path = "Target Support Files/Pods-Joke-WidgetExtension/Pods-Joke-WidgetExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		DF44FE38845F4B62772AC734 /* Pods_JokeGenerator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JokeGenerator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -125,6 +132,7 @@
 			files = (
 				C8FED65426FE042F0074392C /* SwiftUI.framework in Frameworks */,
 				C8FED65326FE042F0074392C /* WidgetKit.framework in Frameworks */,
+				6AA1D4785ABD88A3209DEB4E /* Pods_Joke_WidgetExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +144,8 @@
 			children = (
 				7C4A2702F9D29FD5B6AB0D1D /* Pods-JokeGenerator.debug.xcconfig */,
 				64895F76DAA254E8EFE9A5E0 /* Pods-JokeGenerator.release.xcconfig */,
+				CFA1153B5059512979905E08 /* Pods-Joke-WidgetExtension.debug.xcconfig */,
+				91420648B2A279D2451D1143 /* Pods-Joke-WidgetExtension.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -197,6 +207,7 @@
 				112766C626F5FB5E0038D799 /* dark.jpg */,
 				0DAE977326C851A500587E72 /* LaunchScreen.storyboard */,
 				0DAE977626C851A500587E72 /* Info.plist */,
+				0DB7DACA270CEE5A00F8FCD6 /* JokeGenerateService.swift */,
 			);
 			path = JokeGenerator;
 			sourceTree = "<group>";
@@ -229,6 +240,7 @@
 				DF44FE38845F4B62772AC734 /* Pods_JokeGenerator.framework */,
 				C8FED62426FDFB700074392C /* WidgetKit.framework */,
 				C8FED62626FDFB700074392C /* SwiftUI.framework */,
+				1E9BE7745109C534D7F8F00A /* Pods_Joke_WidgetExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -272,6 +284,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C8FED66126FE04320074392C /* Build configuration list for PBXNativeTarget "Joke-WidgetExtension" */;
 			buildPhases = (
+				D2147327351314F13450F956 /* [CP] Check Pods Manifest.lock */,
 				C8FED64E26FE042F0074392C /* Sources */,
 				C8FED64F26FE042F0074392C /* Frameworks */,
 				C8FED65026FE042F0074392C /* Resources */,
@@ -384,6 +397,28 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JokeGenerator/Pods-JokeGenerator-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D2147327351314F13450F956 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Joke-WidgetExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -406,6 +441,7 @@
 				0D48FE2C26CB05FD009B16C3 /* JokeGenerateWorker.swift in Sources */,
 				0D48FE2E26CB14A4009B16C3 /* JokeGenerateModel.swift in Sources */,
 				0D48FE3A26CC4A89009B16C3 /* SettingsWorker.swift in Sources */,
+				0DB7DACB270CEE5A00F8FCD6 /* JokeGenerateService.swift in Sources */,
 				0D48FE3126CB266E009B16C3 /* JokeModel.swift in Sources */,
 				0D48FE3826CC4A79009B16C3 /* SettingsPresenter.swift in Sources */,
 			);
@@ -423,6 +459,7 @@
 				C8FED66726FE69A80074392C /* SettingsViewController.swift in Sources */,
 				C8FED66C26FE69E90074392C /* SettingsModel.swift in Sources */,
 				C8FED66426FE04610074392C /* JokeModel.swift in Sources */,
+				0DB7DACC270CF2B200F8FCD6 /* JokeGenerateService.swift in Sources */,
 				C8FED66826FE69DE0074392C /* SettingsInteractor.swift in Sources */,
 				C8FED66926FE69E00074392C /* SettingsPresenter.swift in Sources */,
 				C8FED66D26FE6A120074392C /* JokeGenerateModel.swift in Sources */,
@@ -620,19 +657,20 @@
 		};
 		C8FED66226FE04320074392C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CFA1153B5059512979905E08 /* Pods-Joke-WidgetExtension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = "Joke-WidgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U29U2NRFW2;
+				DEVELOPMENT_TEAM = 4Q3JZC8T8R;
 				INFOPLIST_FILE = "Joke-Widget/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ugsuzf.JokeGenerator.Joke-Widget";
+				PRODUCT_BUNDLE_IDENTIFIER = "ugsuzf.JokeGenerator.Joke-Widget1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -642,19 +680,20 @@
 		};
 		C8FED66326FE04320074392C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91420648B2A279D2451D1143 /* Pods-Joke-WidgetExtension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = "Joke-WidgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U29U2NRFW2;
+				DEVELOPMENT_TEAM = 4Q3JZC8T8R;
 				INFOPLIST_FILE = "Joke-Widget/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ugsuzf.JokeGenerator.Joke-Widget";
+				PRODUCT_BUNDLE_IDENTIFIER = "ugsuzf.JokeGenerator.Joke-Widget1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;

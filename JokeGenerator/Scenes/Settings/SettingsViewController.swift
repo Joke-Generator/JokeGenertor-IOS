@@ -105,7 +105,7 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
             
             if indexPath.row != 0
             {
-                // Category selection
+//                 Category selection
                 if cell.accessoryType.self == .checkmark
                 {
                     if sections[indexPath.section].title == MenuList.Categories.rawValue {
@@ -122,7 +122,7 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
                         interactor?.allGroupCheckmark(cell: cell)
                     }
                 }
-                //Theme Selection
+//                Theme Selection
                 if sections[indexPath.section].options[indexPath.row-1] == Themes.DarkMode.rawValue {
                     interactor?.justOneCheckmark(cellType: .Themes, cell: cell, tableView: tableView)
                     delegate?.chanceThemeClicked(name: "dark.jpg")
@@ -154,7 +154,7 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
                     interactor?.notification(option: .Custom)
                 }
             }
-            // Rate Us
+//              Rate Us
             if sections[indexPath.section].title == MenuList.RateUs.rawValue{
                 router?.rateUS()
             }

@@ -35,14 +35,18 @@ class JokeGenerateController: UIViewController, JokeGenerateProtocol, SettingsCo
     @IBOutlet weak var jokeImageViewController: UIImageView!
     
     @IBOutlet weak var themeImage: UIImageView!
-    
+//
+//    override func viewDidAppear(_ animated: Bool) {
+//        setup()
+//        let settingsView = SettingsViewController()
+//        settingsView.delegate = self
+//        menu = SideMenuNavigationController(rootViewController: settingsView)
+//    }
     override func viewDidLoad() {
-        super.viewDidLoad()
         setup()
         let settingsView = SettingsViewController()
         settingsView.delegate = self
         menu = SideMenuNavigationController(rootViewController: settingsView)
-        
     }
     
     
@@ -53,15 +57,19 @@ class JokeGenerateController: UIViewController, JokeGenerateProtocol, SettingsCo
         let interactor = JokeGenerateInteractor()
         let presenter = JokeGeneratePresenter()
         let router = JokeGenerateRouter()
+        let worker = JokeGenerateWorker()
         
         viewController.interactor = interactor
         viewController.router = router
         interactor.presenter = presenter
         presenter.viewController = viewController
         router.viewController = viewController
-        interactor.refresh()
-        interactor.randomSelectImage()
+        interactor.worker = worker
         
+        interactor.randomSelectImage()
+        interactor.refresh { joke in
+            print("")
+        }
         
     }
     
@@ -104,8 +112,11 @@ class JokeGenerateController: UIViewController, JokeGenerateProtocol, SettingsCo
     
     @IBAction func refreshButtonClicked(_ sender: Any) {
         //TODO
-        interactor?.refresh()
+        interactor?.refresh(complation: { joke in
+            print("")
+        })
         interactor?.randomSelectImage()
+//        print(JokeGenerateService().getSingleJoke(category: "Any"))
     }
     
     

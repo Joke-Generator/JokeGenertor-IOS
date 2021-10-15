@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		013BAC24F7AC722E59517CB110A9E685 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEA81548823E7EA6653DC415DF40CBF /* HTTPMethod.swift */; };
+		07EE9BBD34205642A458342274B07539 /* Pods-Joke-WidgetExtension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7CF9355BD81A09023C1D60EA38C234D1 /* Pods-Joke-WidgetExtension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		08B5B89F28224381711F45A680C292D9 /* SideMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF4BD9D117283FC2B44E14FEB0D5E87 /* SideMenu-dummy.m */; };
 		09A0A5D3733F69E93F553ABBCF02FB77 /* SideMenuTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1293B29FDD3AE458E77495BD577E4B56 /* SideMenuTransitionController.swift */; };
 		0A1849775CF90D514963187D3A771CF8 /* Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51ED672977440D46498BD74BCC35437D /* Combine.swift */; };
@@ -19,7 +20,7 @@
 		27D830F1CAC60B99CC0A135F583BFFF2 /* SideMenuPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292F7DDF7768EF48C2F49F57C0C56523 /* SideMenuPresentationController.swift */; };
 		27E59A11A2743B0595CDE3A08675EAE1 /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E43D0088022C0FEF1995CB7AA98F9BA /* DispatchQueue+Alamofire.swift */; };
 		2ED518A3FA8DCBE08E621AC5C32844A9 /* SideMenuPushCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15510F5B6223AB9983B3B96819EDD85D /* SideMenuPushCoordinator.swift */; };
-		336CFAB53E4FF9A523BD280147D415B1 /* Pods-JokeGenerator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0E20FE7559A26A107623E77BC1DB60 /* Pods-JokeGenerator-dummy.m */; };
+		336CFAB53E4FF9A523BD280147D415B1 /* Pods-JokeGenerator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A89071340737B0BABF809B2F2529ECF /* Pods-JokeGenerator-dummy.m */; };
 		381FF05F8B4F611EE9C2FDBE4457BB89 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B917530DE32B64BB832BF9DE2B3E767 /* SessionDelegate.swift */; };
 		3846AFE38D1B63A9F0D9073C4ABC6DAA /* SideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3D1E9738702965AA3BF0F5AC7D6DD8 /* SideMenuNavigationController.swift */; };
 		3E18B004D34ED5441A193684EEB25BD3 /* SideMenuPresentationStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1630E8768E06266BD97BB5D8463F66AA /* SideMenuPresentationStyle.swift */; };
@@ -44,6 +45,7 @@
 		905A503F069C27E841BAD9F4EFD4F1AF /* Protected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C0A6000D75B7FDD6ABD780D9A73DE5 /* Protected.swift */; };
 		911448B2EDA2FF880108F77642797A88 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0EC0F57BA985C7DF2759A7900D713 /* ResponseSerialization.swift */; };
 		91B837CE0DCD8EDB300FCDFFA1279162 /* HTTPHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98896E3BDF63E9DC0E48F334ECB389AE /* HTTPHeaders.swift */; };
+		997975E554896BF145F62B7460EA7D90 /* Pods-Joke-WidgetExtension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A64670A1E363C7CA2485C70B001D5C61 /* Pods-Joke-WidgetExtension-dummy.m */; };
 		9B1D8A7798D8A6F518FC9AF9725431D0 /* URLConvertible+URLRequestConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76911C7455B4948E2F53F8A010A4C9FD /* URLConvertible+URLRequestConvertible.swift */; };
 		9FED70D1E1FBFB80E974E999EF732258 /* RetryPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B301387D516D20E59CB430076DA69047 /* RetryPolicy.swift */; };
 		A9C7B29D4878F1690BBE3F8195CF0313 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D3D57353834825F7B52B816066B7789 /* CFNetwork.framework */; };
@@ -59,13 +61,14 @@
 		D31FC7FDD450C4CDD633ECBAD27C6221 /* URLEncodedFormEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155B5A1ED7F805E34A49388D7E6934AA /* URLEncodedFormEncoder.swift */; };
 		D3D22BB8C279DC03EA91BFE3F5412477 /* Deprecations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE040FECB5A671AF05EF9A6E7BCAFAF4 /* Deprecations.swift */; };
 		D5EAAFB6FAD77A8F0699345149BA3CBB /* URLRequest+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5C152D5FA2C202A85454BA20B2C2E8 /* URLRequest+Alamofire.swift */; };
+		D6A33F85CF0564E9F5261533B397133D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD0CE05D5D076B1B5190EE5DF97FD54E /* Foundation.framework */; };
 		D777716F0B6C0754B7B0230531743BC4 /* SideMenu-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B2D5703E2961F1EC2162788255089CC2 /* SideMenu-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DC627AFC5B585686898B014184AFCABD /* AuthenticationInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F694FE011788C24C9D99DE1DABBF9E6 /* AuthenticationInterceptor.swift */; };
 		EDC93BD7B9262119AE145E4C7A9D0212 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701D524DB7FAD3A79C8A3C5BAA47B1C7 /* Request.swift */; };
 		F0F3224FF592F9BA2A044A2FC2BD4CCD /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FACE727536289E5CD106AC120B16988 /* Validation.swift */; };
 		F313925EFA1264F29E31F91EDE5187D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD0CE05D5D076B1B5190EE5DF97FD54E /* Foundation.framework */; };
 		F70EF854395CDE981A8336E4FF0310FE /* URLSessionConfiguration+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4110B64F7419F82C7DED9B5F78167F /* URLSessionConfiguration+Alamofire.swift */; };
-		F796589E749A7DFC28D4BF30228208A2 /* Pods-JokeGenerator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 42FCA0403DFFDFCAB9C0E2523DBF6E3E /* Pods-JokeGenerator-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F796589E749A7DFC28D4BF30228208A2 /* Pods-JokeGenerator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5EAD0A81F5FA7F35800CC322507226B3 /* Pods-JokeGenerator-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +78,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = C4A0A7D8591B67FB75E2E8D215E3735B;
 			remoteInfo = SideMenu;
+		};
+		4094CD82256A04F8010F47A9DFEEC2DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
+			remoteInfo = Alamofire;
 		};
 		EC495EB7A05E88CFDB7474BF72271F48 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -86,7 +96,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		05C3EFD6973B14382CAFEFDBEAC288B7 /* Pods-JokeGenerator-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JokeGenerator-acknowledgements.plist"; sourceTree = "<group>"; };
+		06888E947AAF1186080EB8D1CEBD21DD /* Pods-JokeGenerator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-JokeGenerator.modulemap"; sourceTree = "<group>"; };
+		0C37E37F75BC88E653CDD98A5FC8A3C7 /* Pods-Joke-WidgetExtension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Joke-WidgetExtension-acknowledgements.markdown"; sourceTree = "<group>"; };
 		104F85D3DB85224311187563F935DF5D /* SideMenu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SideMenu.debug.xcconfig; sourceTree = "<group>"; };
 		1108652E969164384AA104383B0B4B1F /* SideMenuAnimationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuAnimationController.swift; path = Pod/Classes/SideMenuAnimationController.swift; sourceTree = "<group>"; };
 		1293B29FDD3AE458E77495BD577E4B56 /* SideMenuTransitionController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuTransitionController.swift; path = Pod/Classes/SideMenuTransitionController.swift; sourceTree = "<group>"; };
@@ -95,16 +106,19 @@
 		155B5A1ED7F805E34A49388D7E6934AA /* URLEncodedFormEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLEncodedFormEncoder.swift; path = Source/URLEncodedFormEncoder.swift; sourceTree = "<group>"; };
 		1630E8768E06266BD97BB5D8463F66AA /* SideMenuPresentationStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuPresentationStyle.swift; path = Pod/Classes/SideMenuPresentationStyle.swift; sourceTree = "<group>"; };
 		1A3C4C5E59506ACE8900C2466415CE19 /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
-		200B99607F7042D1E1DF138866E512F5 /* Pods-JokeGenerator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-JokeGenerator.modulemap"; sourceTree = "<group>"; };
+		1FBD2DAC17F7CBC26CAD066949B9DAF3 /* Pods-JokeGenerator-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JokeGenerator-frameworks.sh"; sourceTree = "<group>"; };
 		292F7DDF7768EF48C2F49F57C0C56523 /* SideMenuPresentationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuPresentationController.swift; path = Pod/Classes/SideMenuPresentationController.swift; sourceTree = "<group>"; };
 		297C222F56C6DE430957586AC0317C74 /* ParameterEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoder.swift; path = Source/ParameterEncoder.swift; sourceTree = "<group>"; };
+		2AFD016A3A28DD349EAEA751A65A4DB9 /* Pods-JokeGenerator-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JokeGenerator-acknowledgements.markdown"; sourceTree = "<group>"; };
+		314B28CBA3016AF8C5B41C96C8FD8BA4 /* Pods-JokeGenerator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JokeGenerator.debug.xcconfig"; sourceTree = "<group>"; };
 		319D06AA0D1D0BA345459C039040A1ED /* SideMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SideMenu.framework; path = SideMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32A0397BD61B49EFD625797A9F90EA7A /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
 		350AD535A2160E135AD019F06F22F096 /* Result+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Result+Alamofire.swift"; path = "Source/Result+Alamofire.swift"; sourceTree = "<group>"; };
 		37CDADC5440120F2669BBBD9BF6535D1 /* ServerTrustEvaluation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustEvaluation.swift; path = Source/ServerTrustEvaluation.swift; sourceTree = "<group>"; };
+		3A89071340737B0BABF809B2F2529ECF /* Pods-JokeGenerator-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JokeGenerator-dummy.m"; sourceTree = "<group>"; };
+		3B98590862C8B25058F99C5376AC127C /* Pods_Joke_WidgetExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Joke_WidgetExtension.framework; path = "Pods-Joke-WidgetExtension.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D3ECDA77EC5CBC7E972847B82C2EB51 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
 		3FA919A8560AAA37980F795BC2AEC982 /* Alamofire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.release.xcconfig; sourceTree = "<group>"; };
-		42FCA0403DFFDFCAB9C0E2523DBF6E3E /* Pods-JokeGenerator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JokeGenerator-umbrella.h"; sourceTree = "<group>"; };
 		460B8E5133E0E5645D0A616E4E737837 /* SideMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SideMenu-prefix.pch"; sourceTree = "<group>"; };
 		47DC218A5EB0A31F176FEB8E362701E5 /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Pod/Classes/Extensions.swift; sourceTree = "<group>"; };
 		4B960AB0A4AE397F9F59EB72B82A3807 /* CachedResponseHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CachedResponseHandler.swift; path = Source/CachedResponseHandler.swift; sourceTree = "<group>"; };
@@ -112,34 +126,37 @@
 		4C1029B2FCD04EEC6294E4265285EFE3 /* SideMenu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SideMenu.release.xcconfig; sourceTree = "<group>"; };
 		4FACE727536289E5CD106AC120B16988 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
 		51ED672977440D46498BD74BCC35437D /* Combine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Combine.swift; path = Source/Combine.swift; sourceTree = "<group>"; };
-		56D47D939205A9A6C2F633C08BC9E91F /* Pods-JokeGenerator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JokeGenerator.debug.xcconfig"; sourceTree = "<group>"; };
 		5945CCB7E20CD549C7863E965B47C524 /* Print.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Print.swift; path = Pod/Classes/Print.swift; sourceTree = "<group>"; };
 		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EAD0A81F5FA7F35800CC322507226B3 /* Pods-JokeGenerator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JokeGenerator-umbrella.h"; sourceTree = "<group>"; };
 		63466B2E6AF1725F54E48150C395E37E /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
 		67C0A6000D75B7FDD6ABD780D9A73DE5 /* Protected.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Protected.swift; path = Pod/Classes/Protected.swift; sourceTree = "<group>"; };
 		6AF574A1379504D4DB89280303DC8E4F /* OperationQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "OperationQueue+Alamofire.swift"; path = "Source/OperationQueue+Alamofire.swift"; sourceTree = "<group>"; };
-		6B0E20FE7559A26A107623E77BC1DB60 /* Pods-JokeGenerator-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JokeGenerator-dummy.m"; sourceTree = "<group>"; };
 		6C5C152D5FA2C202A85454BA20B2C2E8 /* URLRequest+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLRequest+Alamofire.swift"; path = "Source/URLRequest+Alamofire.swift"; sourceTree = "<group>"; };
 		6D029A6DD0DB8C3A12826CEF054690CC /* Protected.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Protected.swift; path = Source/Protected.swift; sourceTree = "<group>"; };
 		6D4D0817A9A9B3A2F4B30516029E0B65 /* Session.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Source/Session.swift; sourceTree = "<group>"; };
 		6E43D0088022C0FEF1995CB7AA98F9BA /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
 		6FFAE81716CA30E207CF141B21EF44C2 /* SideMenu-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SideMenu-Info.plist"; sourceTree = "<group>"; };
 		701D524DB7FAD3A79C8A3C5BAA47B1C7 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
+		72D6D076F63D7395F6E2E43E940ACDEE /* Pods-JokeGenerator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JokeGenerator.release.xcconfig"; sourceTree = "<group>"; };
 		73638EC60361882FF39D7F83ED7CB9FE /* SideMenuInteractionController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuInteractionController.swift; path = Pod/Classes/SideMenuInteractionController.swift; sourceTree = "<group>"; };
 		74B98D3DAEA08DD74AA9C83AA936E9C0 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
 		76911C7455B4948E2F53F8A010A4C9FD /* URLConvertible+URLRequestConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLConvertible+URLRequestConvertible.swift"; path = "Source/URLConvertible+URLRequestConvertible.swift"; sourceTree = "<group>"; };
+		782A0BA955310157D84BE8CFA0A9FC54 /* Pods-Joke-WidgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Joke-WidgetExtension.release.xcconfig"; sourceTree = "<group>"; };
+		79AEC7F7F780E019AFA1209F4C435C71 /* Pods-Joke-WidgetExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Joke-WidgetExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		7A37114B5CB856AB63FA17E5652111A0 /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
-		7A4EAF32990DA3062E3F3010D4FACC01 /* Pods-JokeGenerator-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JokeGenerator-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7CF9355BD81A09023C1D60EA38C234D1 /* Pods-Joke-WidgetExtension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Joke-WidgetExtension-umbrella.h"; sourceTree = "<group>"; };
 		8519B3A705CC8C4CB965DDB0D03D145D /* UITableViewVibrantCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UITableViewVibrantCell.swift; path = Pod/Classes/UITableViewVibrantCell.swift; sourceTree = "<group>"; };
 		8B917530DE32B64BB832BF9DE2B3E767 /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
 		8D3D57353834825F7B52B816066B7789 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
 		902C5FDF91C40093F3A9CF11EA273BA5 /* Initializable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Initializable.swift; path = Pod/Classes/Initializable.swift; sourceTree = "<group>"; };
-		941E7DA821D4BFE6836A08D91983E903 /* Pods-JokeGenerator-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JokeGenerator-Info.plist"; sourceTree = "<group>"; };
+		9102D68D42C31BC77DEFD28AC7D81794 /* Pods-Joke-WidgetExtension-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Joke-WidgetExtension-Info.plist"; sourceTree = "<group>"; };
 		97F6F3E4FA8381F9E03DFEAA3E03819B /* Alamofire-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Alamofire-Info.plist"; sourceTree = "<group>"; };
 		98896E3BDF63E9DC0E48F334ECB389AE /* HTTPHeaders.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPHeaders.swift; path = Source/HTTPHeaders.swift; sourceTree = "<group>"; };
 		9A69526AED43CFDB07924572BF622D63 /* RequestTaskMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestTaskMap.swift; path = Source/RequestTaskMap.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9F694FE011788C24C9D99DE1DABBF9E6 /* AuthenticationInterceptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AuthenticationInterceptor.swift; path = Source/AuthenticationInterceptor.swift; sourceTree = "<group>"; };
+		A64670A1E363C7CA2485C70B001D5C61 /* Pods-Joke-WidgetExtension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Joke-WidgetExtension-dummy.m"; sourceTree = "<group>"; };
 		A7FB4BB1A52882115D0BE506BCF08CD5 /* SideMenuManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuManager.swift; path = Pod/Classes/SideMenuManager.swift; sourceTree = "<group>"; };
 		A94B8FE9BD2CBB6847CE7D10DBB41C81 /* MultipartUpload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartUpload.swift; path = Source/MultipartUpload.swift; sourceTree = "<group>"; };
 		AB4110B64F7419F82C7DED9B5F78167F /* URLSessionConfiguration+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLSessionConfiguration+Alamofire.swift"; path = "Source/URLSessionConfiguration+Alamofire.swift"; sourceTree = "<group>"; };
@@ -157,16 +174,26 @@
 		C6B49B69D15E640BDE63E2688196290B /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
 		C81E872FE178008CF427462E589AAFFF /* StringEncoding+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "StringEncoding+Alamofire.swift"; path = "Source/StringEncoding+Alamofire.swift"; sourceTree = "<group>"; };
 		C8F8476747E531484196B85EEE02FFCA /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
-		CE5457EC89CB7E6FAAD2D48F22977D38 /* Pods-JokeGenerator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JokeGenerator.release.xcconfig"; sourceTree = "<group>"; };
+		CCAC04A3E4F997CED3239777C1A69069 /* Pods-Joke-WidgetExtension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Joke-WidgetExtension-acknowledgements.plist"; sourceTree = "<group>"; };
+		D7C9E94EA6308DA574C0AA6DD21FC54D /* Pods-Joke-WidgetExtension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Joke-WidgetExtension.modulemap"; sourceTree = "<group>"; };
+		DC3C31DBF64E0429BAA7C25B4AF26AE9 /* Pods-JokeGenerator-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JokeGenerator-acknowledgements.plist"; sourceTree = "<group>"; };
 		EAEA81548823E7EA6653DC415DF40CBF /* HTTPMethod.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPMethod.swift; path = Source/HTTPMethod.swift; sourceTree = "<group>"; };
 		EED5F24E4D4360638565752F4C114A2F /* Pods_JokeGenerator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_JokeGenerator.framework; path = "Pods-JokeGenerator.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF3D1E9738702965AA3BF0F5AC7D6DD8 /* SideMenuNavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuNavigationController.swift; path = Pod/Classes/SideMenuNavigationController.swift; sourceTree = "<group>"; };
+		F70844B8BD1A5F59E2B9722A51CC89BC /* Pods-JokeGenerator-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JokeGenerator-Info.plist"; sourceTree = "<group>"; };
 		FA6D065C80D1E788271FE3B41BC34ED4 /* SideMenu.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SideMenu.modulemap; sourceTree = "<group>"; };
-		FB38EE2AB50ADA7481AA33E018CF002C /* Pods-JokeGenerator-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JokeGenerator-frameworks.sh"; sourceTree = "<group>"; };
 		FD0CE05D5D076B1B5190EE5DF97FD54E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		046D12F5A55C940463A630785A29E1A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6A33F85CF0564E9F5261533B397133D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7569D73AF7530CC0242666D575AC71A3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -218,6 +245,31 @@
 			path = "../Target Support Files/SideMenu";
 			sourceTree = "<group>";
 		};
+		5D334087D5F9DE5606570FA02A81D84E /* Pods-Joke-WidgetExtension */ = {
+			isa = PBXGroup;
+			children = (
+				D7C9E94EA6308DA574C0AA6DD21FC54D /* Pods-Joke-WidgetExtension.modulemap */,
+				0C37E37F75BC88E653CDD98A5FC8A3C7 /* Pods-Joke-WidgetExtension-acknowledgements.markdown */,
+				CCAC04A3E4F997CED3239777C1A69069 /* Pods-Joke-WidgetExtension-acknowledgements.plist */,
+				A64670A1E363C7CA2485C70B001D5C61 /* Pods-Joke-WidgetExtension-dummy.m */,
+				9102D68D42C31BC77DEFD28AC7D81794 /* Pods-Joke-WidgetExtension-Info.plist */,
+				7CF9355BD81A09023C1D60EA38C234D1 /* Pods-Joke-WidgetExtension-umbrella.h */,
+				79AEC7F7F780E019AFA1209F4C435C71 /* Pods-Joke-WidgetExtension.debug.xcconfig */,
+				782A0BA955310157D84BE8CFA0A9FC54 /* Pods-Joke-WidgetExtension.release.xcconfig */,
+			);
+			name = "Pods-Joke-WidgetExtension";
+			path = "Target Support Files/Pods-Joke-WidgetExtension";
+			sourceTree = "<group>";
+		};
+		60CC724D5B8BE57B314FB221D7D9B9B1 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5D334087D5F9DE5606570FA02A81D84E /* Pods-Joke-WidgetExtension */,
+				AEE43F886C527004D56A8316A029A836 /* Pods-JokeGenerator */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
 		61C8CC330A5CA84DA2F5F1D32AB07069 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,21 +279,15 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		76080D2991AFD8ED1DEBD6221A02B9F0 /* Pods-JokeGenerator */ = {
+		768697E7C0F00CC074CB6F42A5BB2BF1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				200B99607F7042D1E1DF138866E512F5 /* Pods-JokeGenerator.modulemap */,
-				7A4EAF32990DA3062E3F3010D4FACC01 /* Pods-JokeGenerator-acknowledgements.markdown */,
-				05C3EFD6973B14382CAFEFDBEAC288B7 /* Pods-JokeGenerator-acknowledgements.plist */,
-				6B0E20FE7559A26A107623E77BC1DB60 /* Pods-JokeGenerator-dummy.m */,
-				FB38EE2AB50ADA7481AA33E018CF002C /* Pods-JokeGenerator-frameworks.sh */,
-				941E7DA821D4BFE6836A08D91983E903 /* Pods-JokeGenerator-Info.plist */,
-				42FCA0403DFFDFCAB9C0E2523DBF6E3E /* Pods-JokeGenerator-umbrella.h */,
-				56D47D939205A9A6C2F633C08BC9E91F /* Pods-JokeGenerator.debug.xcconfig */,
-				CE5457EC89CB7E6FAAD2D48F22977D38 /* Pods-JokeGenerator.release.xcconfig */,
+				5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */,
+				3B98590862C8B25058F99C5376AC127C /* Pods_Joke_WidgetExtension.framework */,
+				EED5F24E4D4360638565752F4C114A2F /* Pods_JokeGenerator.framework */,
+				319D06AA0D1D0BA345459C039040A1ED /* SideMenu.framework */,
 			);
-			name = "Pods-JokeGenerator";
-			path = "Target Support Files/Pods-JokeGenerator";
+			name = Products;
 			sourceTree = "<group>";
 		};
 		94BE1015DB9F6164863F27C85CFD5425 /* Pods */ = {
@@ -251,6 +297,23 @@
 				BC3E20BD8BA8F7D66CAE7C04A3B1E0F4 /* SideMenu */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		AEE43F886C527004D56A8316A029A836 /* Pods-JokeGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				06888E947AAF1186080EB8D1CEBD21DD /* Pods-JokeGenerator.modulemap */,
+				2AFD016A3A28DD349EAEA751A65A4DB9 /* Pods-JokeGenerator-acknowledgements.markdown */,
+				DC3C31DBF64E0429BAA7C25B4AF26AE9 /* Pods-JokeGenerator-acknowledgements.plist */,
+				3A89071340737B0BABF809B2F2529ECF /* Pods-JokeGenerator-dummy.m */,
+				1FBD2DAC17F7CBC26CAD066949B9DAF3 /* Pods-JokeGenerator-frameworks.sh */,
+				F70844B8BD1A5F59E2B9722A51CC89BC /* Pods-JokeGenerator-Info.plist */,
+				5EAD0A81F5FA7F35800CC322507226B3 /* Pods-JokeGenerator-umbrella.h */,
+				314B28CBA3016AF8C5B41C96C8FD8BA4 /* Pods-JokeGenerator.debug.xcconfig */,
+				72D6D076F63D7395F6E2E43E940ACDEE /* Pods-JokeGenerator.release.xcconfig */,
+			);
+			name = "Pods-JokeGenerator";
+			path = "Target Support Files/Pods-JokeGenerator";
 			sourceTree = "<group>";
 		};
 		BC3E20BD8BA8F7D66CAE7C04A3B1E0F4 /* SideMenu */ = {
@@ -274,14 +337,6 @@
 			);
 			name = SideMenu;
 			path = SideMenu;
-			sourceTree = "<group>";
-		};
-		C104D1DD12C566233453AD4840B910DB /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				76080D2991AFD8ED1DEBD6221A02B9F0 /* Pods-JokeGenerator */,
-			);
-			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		CED710614F700CCA85B176BB5919626C /* Alamofire */ = {
@@ -334,8 +389,8 @@
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
 				94BE1015DB9F6164863F27C85CFD5425 /* Pods */,
-				E62541A52E9097A999C096BB04D0CB1D /* Products */,
-				C104D1DD12C566233453AD4840B910DB /* Targets Support Files */,
+				768697E7C0F00CC074CB6F42A5BB2BF1 /* Products */,
+				60CC724D5B8BE57B314FB221D7D9B9B1 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -352,16 +407,6 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Alamofire";
-			sourceTree = "<group>";
-		};
-		E62541A52E9097A999C096BB04D0CB1D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */,
-				EED5F24E4D4360638565752F4C114A2F /* Pods_JokeGenerator.framework */,
-				319D06AA0D1D0BA345459C039040A1ED /* SideMenu.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -391,9 +436,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F3B85746F202DC35D5C852428F44902C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07EE9BBD34205642A458342274B07539 /* Pods-Joke-WidgetExtension-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		0365F292C90433703C4F8FCCE085E597 /* Pods-Joke-WidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 99F341616040E4979B6ECD6C06F7000E /* Build configuration list for PBXNativeTarget "Pods-Joke-WidgetExtension" */;
+			buildPhases = (
+				F3B85746F202DC35D5C852428F44902C /* Headers */,
+				319060705652E4B1859DB4DD544BB370 /* Sources */,
+				046D12F5A55C940463A630785A29E1A1 /* Frameworks */,
+				38E595A42C4B3BDE7EFA00F0A179A4A8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				504087ED95183F554A4B9F5F2CA2D05F /* PBXTargetDependency */,
+			);
+			name = "Pods-Joke-WidgetExtension";
+			productName = "Pods-Joke-WidgetExtension";
+			productReference = 3B98590862C8B25058F99C5376AC127C /* Pods_Joke_WidgetExtension.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		10132AE6B6824C647990006B7CCE4EFC /* Pods-JokeGenerator */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BF83EFA1B7A65CC544BA8BA2D20E7F12 /* Build configuration list for PBXNativeTarget "Pods-JokeGenerator" */;
@@ -468,11 +540,12 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = E62541A52E9097A999C096BB04D0CB1D /* Products */;
+			productRefGroup = 768697E7C0F00CC074CB6F42A5BB2BF1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */,
+				0365F292C90433703C4F8FCCE085E597 /* Pods-Joke-WidgetExtension */,
 				10132AE6B6824C647990006B7CCE4EFC /* Pods-JokeGenerator */,
 				C4A0A7D8591B67FB75E2E8D215E3735B /* SideMenu */,
 			);
@@ -480,6 +553,13 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		38E595A42C4B3BDE7EFA00F0A179A4A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		490C7135CB3B4A33C19B24D747F07F96 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -547,6 +627,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		319060705652E4B1859DB4DD544BB370 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				997975E554896BF145F62B7460EA7D90 /* Pods-Joke-WidgetExtension-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8B7A6B51F5DD73DE3F3F294B1BF713BE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -585,6 +673,12 @@
 			name = SideMenu;
 			target = C4A0A7D8591B67FB75E2E8D215E3735B /* SideMenu */;
 			targetProxy = 1042649476A20DDE96DE37C7767FE2BE /* PBXContainerItemProxy */;
+		};
+		504087ED95183F554A4B9F5F2CA2D05F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
+			targetProxy = 4094CD82256A04F8010F47A9DFEEC2DE /* PBXContainerItemProxy */;
 		};
 		906774E3BA5EB8FC303817E4956F4EAA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -703,7 +797,7 @@
 		};
 		32EBD9B0A52E512BC928CE3C22B1C995 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 56D47D939205A9A6C2F633C08BC9E91F /* Pods-JokeGenerator.debug.xcconfig */;
+			baseConfigurationReference = 314B28CBA3016AF8C5B41C96C8FD8BA4 /* Pods-JokeGenerator.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -738,9 +832,84 @@
 			};
 			name = Debug;
 		};
+		5074FB5E6A547580962C5F6205E70DF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79AEC7F7F780E019AFA1209F4C435C71 /* Pods-Joke-WidgetExtension.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Joke-WidgetExtension/Pods-Joke-WidgetExtension-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Joke-WidgetExtension/Pods-Joke-WidgetExtension.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7082EB9D3AE117EC52185F6B16623DDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 782A0BA955310157D84BE8CFA0A9FC54 /* Pods-Joke-WidgetExtension.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Joke-WidgetExtension/Pods-Joke-WidgetExtension-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Joke-WidgetExtension/Pods-Joke-WidgetExtension.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		727C5E70752B40210A4E13B472203B5C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CE5457EC89CB7E6FAAD2D48F22977D38 /* Pods-JokeGenerator.release.xcconfig */;
+			baseConfigurationReference = 72D6D076F63D7395F6E2E43E940ACDEE /* Pods-JokeGenerator.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -966,6 +1135,15 @@
 			buildConfigurations = (
 				296B6A122D4DDB50F57AD87F217DE7A5 /* Debug */,
 				0FC98422908F1DD0D387A15F641DABCA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		99F341616040E4979B6ECD6C06F7000E /* Build configuration list for PBXNativeTarget "Pods-Joke-WidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5074FB5E6A547580962C5F6205E70DF6 /* Debug */,
+				7082EB9D3AE117EC52185F6B16623DDA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

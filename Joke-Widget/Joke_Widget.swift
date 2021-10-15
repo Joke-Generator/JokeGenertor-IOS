@@ -25,13 +25,17 @@ struct Provider : TimelineProvider {
     }
     
     func getSnapshot(in context: Context, completion: @escaping (JokeEntry) -> Void) {
-        let tempJoke = JokeGenerateWorker().fetch()
+        let tempJoke = JokeGenerateWorker().fetch { yeay in
+            yeay
+        }
         let entry = JokeEntry(joke: tempJoke)
         completion(entry)
     }
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<JokeEntry>) -> Void) {
-        let tempJoke = JokeGenerateWorker().fetch()
+        let tempJoke = JokeGenerateWorker().fetch { yeay in
+            //
+        }
         let entry = JokeEntry(joke: tempJoke)
         let timeLine = Timeline(entries: [entry], policy: .atEnd)
         completion(timeLine)
@@ -40,7 +44,9 @@ struct Provider : TimelineProvider {
 }
 
 struct WidgetEntryView: View{
-    let entry = Provider.Entry(joke: JokeGenerateWorker().fetch())
+    let entry = Provider.Entry(joke: JokeGenerateWorker().fetch(complation: { yey in
+        //
+    }))
     
     var body: some View{
         JokeView(generalJoke: entry.joke)

@@ -51,8 +51,7 @@ class SettingsInteractor : SettingsInteractorProtocol{
         case .Custom:
             sendNotification(hour: customTime.integer(forKey: "Hour"), minute: customTime.integer(forKey: "Minute"))
             presenter?.presentNotification(title: "Custom", message: "Your notifications will send at chosen time")
-        default:
-            print("No, I'm your father")
+     
         }
         
     }

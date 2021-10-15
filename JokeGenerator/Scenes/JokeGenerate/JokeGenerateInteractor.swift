@@ -12,7 +12,7 @@ import UIKit
 protocol JokeGenerateInteractorProtocol {
     //
     func jokeRequestInitiated(request: Any)
-    func refresh()
+    func refresh(complation : @escaping (GeneralJoke) -> Void )
     func shareJoke(choosenJoke : GeneralJoke)
     func randomSelectImage()
     
@@ -53,10 +53,15 @@ class JokeGenerateInteractor : JokeGenerateInteractorProtocol {
        
     }
     
-    func refresh() {
+    func refresh(complation : @escaping (GeneralJoke) -> Void ) {
         //TODO
-        let obj = JokeGenerateWorker().fetch()
-        self.presenter?.presentJoke(response: JokeModel.Response(jokeObj: obj ) )
+        let obj = worker?.fetch { joke in
+            complation(joke)
+            self.presenter?.presentJoke(response: JokeModel.Response(jokeObj: joke ) )
+            
+        }
+//        print(obj)
+       
     }
     
 
