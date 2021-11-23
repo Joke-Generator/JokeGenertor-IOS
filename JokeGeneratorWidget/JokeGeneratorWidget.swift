@@ -2,66 +2,69 @@
 //  JokeGeneratorWidget.swift
 //  JokeGeneratorWidget
 //
-//  Created by Mely on 24.09.2021.
+//  Created by Furkan Kaan Ugsuz on 15/11/2021.
 //
 
 import WidgetKit
 import SwiftUI
+import Intents
 
-struct Provider: TimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date())
+struct JokeEntry : TimelineEntry{
+    var date = Date()
+    let joke :GeneralJoke
+}
+
+struct Provider : TimelineProvider {
+    
+    var jokeData : Data = Data()
+    
+    
+    func placeholder(in context: Context) -> JokeEntry {
+        return JokeEntry(date: Date(), joke: GeneralJoke(joke: "Nope", category: "Wrong"))
     }
-
-    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date())
+    
+    func getSnapshot(in context: Context, completion: @escaping (JokeEntry) -> Void) {
+        let tempJoke = NetworkManager().fetchJoke(categories: "Any")
+        let entry = JokeEntry(joke: tempJoke)
         completion(entry)
     }
-
-    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
-
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate)
-            entries.append(entry)
-        }
-
-        let timeline = Timeline(entries: entries, policy: .atEnd)
-        completion(timeline)
+    
+    func getTimeline(in context: Context, completion: @escaping (Timeline<JokeEntry>) -> Void) {
+        let tempJoke = NetworkManager().fetchJoke(categories: "Any")
+        let entry = JokeEntry(joke: tempJoke)
+        let timeLine = Timeline(entries: [entry], policy: .atEnd)
+        completion(timeLine)
+    }
+        
+}
+struct WidgetEntryView: View{
+    let entry = Provider.Entry(joke: NetworkManager().fetchJoke(categories: "Any"))
+    
+    var body: some View{
+        JokeView(generalJoke: entry.joke)
+        
     }
 }
 
-struct SimpleEntry: TimelineEntry {
-    let date: Date
-}
-
-struct JokeGeneratorWidgetEntryView : View {
-    var entry: Provider.Entry
-
-    var body: some View {
-        Text(entry.date, style: .time)
+struct JokeView : View{
+    let generalJoke : GeneralJoke
+    
+    var body: some View{
+        Text(generalJoke.joke)
+            .font(.title2)
+            .padding()
     }
 }
 
 @main
-struct JokeGeneratorWidget: Widget {
-    let kind: String = "JokeGeneratorWidget"
-
-    var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: Provider()) { entry in
-            JokeGeneratorWidgetEntryView(entry: entry)
+struct Joke_Widget : Widget {
+    private let kind = "JokeGeneratorWidget"
+    
+    var body: some WidgetConfiguration{
+        StaticConfiguration(kind: kind,
+                            provider: Provider()) { entry in
+                            WidgetEntryView()
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
-    }
-}
-
-struct JokeGeneratorWidget_Previews: PreviewProvider {
-    static var previews: some View {
-        JokeGeneratorWidgetEntryView(entry: SimpleEntry(date: Date()))
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
+                            .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
     }
 }

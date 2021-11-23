@@ -10,53 +10,54 @@ import UIKit
 
 
 protocol JokeGenerateInteractorProtocol {
-    //
-    func jokeRequestInitiated(request: Any)
+   
     func refresh()
     func shareJoke(choosenJoke : GeneralJoke)
     func randomSelectImage()
-    
+    func checkTheme()
     
 }
 
 class JokeGenerateInteractor : JokeGenerateInteractorProtocol {
     
+    
+    
     var presenter : JokeGeneratePresenterProtocol?
-    var worker : JokeGenerateWorker?
+    var worker : JokeGenerateWorkerProtocol?
     
     
-    
-    func jokeRequestInitiated(request: Any) {
-// interactor call worker for getting joke and after get response, send to presenter
-// func can take parameters which is necessery
-        //TODO
-        
-        
-    }
     func randomSelectImage() {
-        //TODO
         
-        let image = ["tongueMonkey","smileEmoji","shrek","monkey","handClown","garfieldAndDog","funnyDog","duck","donkey","cow","cockerel","clown","capHorse","banana","baby","absurtDog"]
+        let image = ["tongueMonkey","smileEmoji","shrek","monkey","handClown","garfieldAndDog","duck","donkey","cow","clown","capHorse","banana","baby","absurtDog"]
         presenter?.presentRandomImage(imageName: image.randomElement()!)
-        
-        
-        
         
     }
     
     func shareJoke(choosenJoke : GeneralJoke) {
-        //TODO
         let activityCont = UIActivityViewController(activityItems: [choosenJoke.joke], applicationActivities: nil)
         presenter?.presentShare(share: activityCont, jokeObj: choosenJoke)
-       
-        
-       
+    
     }
     
     func refresh() {
-        //TODO
-        let obj = JokeGenerateWorker().fetch()
+        let obj = worker?.fetch()
         self.presenter?.presentJoke(response: JokeModel.Response(jokeObj: obj ) )
+    }
+    
+    
+    func checkTheme() {
+        if SettingsViewController().keepTheme.value(forKey: UserDefaultKey.theme.rawValue) != nil {
+            if SettingsViewController().keepTheme.value(forKey: UserDefaultKey.theme.rawValue) as! String == Themes.LightMode.rawValue {
+                presenter?.presentTheme(color: .white)
+            }
+            else{
+                presenter?.presentTheme(color: .black)
+            }
+        }
+        else{
+            presenter?.presentTheme(color: .white)
+        }
+        
     }
     
 

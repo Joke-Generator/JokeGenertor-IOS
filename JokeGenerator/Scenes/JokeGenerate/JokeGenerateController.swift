@@ -15,10 +15,8 @@ protocol JokeGenerateProtocol : NSObjectProtocol {
     func shareJoke(chosenJoke : UIActivityViewController)
     func toSettings(menu: SideMenuNavigationController)
     func showRandomImage(imageName : String)
-    
-    //  func chanceThemeClicked(name: String)
-    
-    
+    func chanceThemeClicked(color: UIColor)
+            
 }
 
 class JokeGenerateController: UIViewController, JokeGenerateProtocol, SettingsControlDelegate {
@@ -26,6 +24,7 @@ class JokeGenerateController: UIViewController, JokeGenerateProtocol, SettingsCo
     
     var interactor : JokeGenerateInteractorProtocol?
     var router : (NSObjectProtocol&JokeGenerateRouterProtocol)?
+    var worker : JokeGenerateWorkerProtocol?
     var tempJoke : GeneralJoke?
     var menu : SideMenuNavigationController?
     
@@ -33,8 +32,12 @@ class JokeGenerateController: UIViewController, JokeGenerateProtocol, SettingsCo
     @IBOutlet weak var jokeLabel: UILabel!
     
     @IBOutlet weak var jokeImageViewController: UIImageView!
+    @IBOutlet weak var settingsButton: UIBarButtonItem!
     
-    @IBOutlet weak var themeImage: UIImageView!
+    
+    @IBOutlet weak var refreshButton: UIButton!
+    
+    @IBOutlet weak var shareButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,32 +45,35 @@ class JokeGenerateController: UIViewController, JokeGenerateProtocol, SettingsCo
         let settingsView = SettingsViewController()
         settingsView.delegate = self
         menu = SideMenuNavigationController(rootViewController: settingsView)
-        
+        refreshButton.layer.cornerRadius = refreshButton.frame.height/3
+        shareButton.layer.cornerRadius = shareButton.frame.height/3
+
     }
     
-    
-    
-    
+
     func setup(){
         let viewController = self
         let interactor = JokeGenerateInteractor()
         let presenter = JokeGeneratePresenter()
         let router = JokeGenerateRouter()
+        let worker = JokeGenerateWorker()
         
         viewController.interactor = interactor
         viewController.router = router
         interactor.presenter = presenter
+        interactor.worker = worker
         presenter.viewController = viewController
         router.viewController = viewController
         interactor.refresh()
         interactor.randomSelectImage()
+        interactor.checkTheme()
         
         
     }
     
     func successJoke(viewModel: JokeModel.ViewModel) {
         //TODO
-        tempJoke = viewModel.joke!
+        tempJoke = viewModel.joke
         if let fun = tempJoke?.joke
         {
             jokeLabel.text = fun
@@ -77,19 +83,27 @@ class JokeGenerateController: UIViewController, JokeGenerateProtocol, SettingsCo
     func errorJoke(viewModel: Any) {
         //TODO
     }
+    
     func toSettings(menu: SideMenuNavigationController) {
         present(menu, animated: true, completion: nil)
         
     }
     
-    func chanceThemeClicked(name: String) {
-        themeImage.image = UIImage(named: name)
+    func chanceThemeClicked(color: UIColor) {
+        if color == UIColor.black {
+            view.backgroundColor = color
+            jokeLabel.textColor = .white
+            settingsButton.tintColor = .white
+        }
+        else{
+            view.backgroundColor = color
+            jokeLabel.textColor = .black
+            settingsButton.tintColor = .black
+        }
     }
     
     func shareJoke(chosenJoke : UIActivityViewController) {
-        //
         present(chosenJoke, animated: true, completion: nil)
-        
     }
     
     func showRandomImage(imageName: String) {

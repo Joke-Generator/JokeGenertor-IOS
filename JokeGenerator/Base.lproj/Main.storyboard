@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qAV-Cy-Y4U">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qAV-Cy-Y4U">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,43 +17,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ueK-dd-6wl">
-                                <rect key="frame" x="0.0" y="27" width="414" height="835"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vl9-6A-smU">
+                                <rect key="frame" x="208" y="696" width="150" height="75"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Vl9-6A-smU" secondAttribute="height" multiplier="2:1" id="luy-yD-hDj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="share">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SLQ-5H-gS2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YPv-Wj-cOb">
+                                <rect key="frame" x="50" y="696" width="150" height="75"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="refresh">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="refreshButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gqv-DE-LXM"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="absurtDog" translatesAutoresizingMaskIntoConstraints="NO" id="kJc-le-aaP">
+                                <rect key="frame" x="0.0" y="88" width="414" height="228"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="228" id="eqM-We-BtA"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xfv-Ak-YYQ">
-                                <rect key="frame" x="20" y="429" width="374" height="259"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xfv-Ak-YYQ">
+                                <rect key="frame" x="20" y="348" width="374" height="259"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Xfv-Ak-YYQ" secondAttribute="height" multiplier="374:259" id="10o-yG-kzM"/>
+                                </constraints>
                                 <string key="text">A man is smoking a cigarette and blowing smoke rings into the air. His girlfriend becomes irritated with the smoke and says : "Can't you see the warning on the cigarette pack? Smoking is hazardous to your health!"  to which the man replies:I am a programmer.  We don't worry about warnings; we only worry about errors."</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YPv-Wj-cOb">
-                                <rect key="frame" x="128" y="696" width="75" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="refresh"/>
-                                <connections>
-                                    <action selector="refreshButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gqv-DE-LXM"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vl9-6A-smU">
-                                <rect key="frame" x="211" y="697" width="75" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="share"/>
-                                <connections>
-                                    <action selector="shareButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SLQ-5H-gS2"/>
-                                </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="absurtDog" translatesAutoresizingMaskIntoConstraints="NO" id="kJc-le-aaP">
-                                <rect key="frame" x="20" y="177" width="374" height="221"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YPv-Wj-cOb" firstAttribute="top" secondItem="Vl9-6A-smU" secondAttribute="top" id="7Eo-dd-Oiq"/>
+                            <constraint firstItem="YPv-Wj-cOb" firstAttribute="height" secondItem="Vl9-6A-smU" secondAttribute="height" id="8bZ-tA-glu"/>
+                            <constraint firstItem="kJc-le-aaP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Dbg-Hs-IV8"/>
+                            <constraint firstItem="Xfv-Ak-YYQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="29.5" id="Ffa-sd-XyM"/>
+                            <constraint firstItem="Vl9-6A-smU" firstAttribute="leading" secondItem="YPv-Wj-cOb" secondAttribute="trailing" constant="8" id="GZi-wx-39t"/>
+                            <constraint firstItem="kJc-le-aaP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="SQd-4M-gFw"/>
+                            <constraint firstItem="YPv-Wj-cOb" firstAttribute="width" secondItem="Vl9-6A-smU" secondAttribute="height" multiplier="2:1" id="Yz3-ay-hEw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Vl9-6A-smU" secondAttribute="trailing" constant="56" id="a7t-V6-FXj"/>
+                            <constraint firstItem="kJc-le-aaP" firstAttribute="centerX" secondItem="Xfv-Ak-YYQ" secondAttribute="centerX" id="aXl-Or-khB"/>
+                            <constraint firstItem="Xfv-Ak-YYQ" firstAttribute="top" secondItem="kJc-le-aaP" secondAttribute="bottom" constant="32" id="arW-gp-Bca"/>
+                            <constraint firstItem="Xfv-Ak-YYQ" firstAttribute="width" secondItem="Vl9-6A-smU" secondAttribute="height" multiplier="374:75" id="bFF-pu-hLQ"/>
+                            <constraint firstItem="Vl9-6A-smU" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="75:448" id="bQC-z8-9oC"/>
+                            <constraint firstItem="YPv-Wj-cOb" firstAttribute="top" secondItem="Xfv-Ak-YYQ" secondAttribute="bottom" constant="89" id="dYG-kR-8th"/>
+                            <constraint firstItem="YPv-Wj-cOb" firstAttribute="firstBaseline" secondItem="Vl9-6A-smU" secondAttribute="baseline" id="fGb-8q-Rbk"/>
+                            <constraint firstItem="YPv-Wj-cOb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="hL7-SJ-A3S"/>
+                            <constraint firstItem="YPv-Wj-cOb" firstAttribute="width" secondItem="Vl9-6A-smU" secondAttribute="width" id="jT5-h2-Vxr"/>
+                            <constraint firstItem="kJc-le-aaP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pYo-85-c4F"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="crC-nr-lj8">
                         <barButtonItem key="rightBarButtonItem" title="..." id="MLA-KC-tWQ" colorLabel="IBBuiltInLabel-Gray">
@@ -65,7 +92,9 @@
                     <connections>
                         <outlet property="jokeImageViewController" destination="kJc-le-aaP" id="3oJ-7C-da9"/>
                         <outlet property="jokeLabel" destination="Xfv-Ak-YYQ" id="tF4-IT-2pX"/>
-                        <outlet property="themeImage" destination="ueK-dd-6wl" id="Zi4-eM-xgo"/>
+                        <outlet property="refreshButton" destination="YPv-Wj-cOb" id="LfW-sK-5mg"/>
+                        <outlet property="settingsButton" destination="MLA-KC-tWQ" id="Ezd-Vx-Q3A"/>
+                        <outlet property="shareButton" destination="Vl9-6A-smU" id="IXj-7c-aeX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -98,6 +127,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
