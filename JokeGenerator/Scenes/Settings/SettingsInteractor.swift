@@ -12,13 +12,12 @@ import StoreKit
 
 
 protocol SettingsInteractorProtocol {
-    //
-    func selectCategories()
-    func selectThemes()
+    
     func notification(option: NotificationType)
     func rateUs(id: String)
     func allGroupCheckmark(cell: UITableViewCell  )
     func justOneCheckmark (cellType :cellCheckmarkType , cell : UITableViewCell , tableView : UITableView  )
+    func checkTheme()
     
 }
 
@@ -30,13 +29,18 @@ class SettingsInteractor : SettingsInteractorProtocol{
     
     var customTime = UserDefaults.standard
     
-    
-    func selectCategories() {
-        //
-    }
-    
-    func selectThemes() {
-        //        <#code#>
+    func checkTheme(){
+        if SettingsViewController().keepTheme.value(forKey: UserDefaultKey.theme.rawValue) != nil {
+            if SettingsViewController().keepTheme.value(forKey: UserDefaultKey.theme.rawValue) as! String == Themes.LightMode.rawValue {
+                presenter?.presentTheme(color: .white)
+            }
+            else{
+                presenter?.presentTheme(color: .lightGray)
+            }
+        }
+        else{
+            presenter?.presentTheme(color: .white)
+        }
     }
     
     func notification(option : NotificationType) {

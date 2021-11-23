@@ -6,12 +6,13 @@
 //
 
 import Foundation
+import UIKit
 
 
 
 protocol SettingsControlDelegate {
     
-    func chanceThemeClicked(name: String)
+    func chanceThemeClicked(color: UIColor)
     func rateUs()
 }
 
@@ -75,6 +76,7 @@ enum UserDefaultKey : String {
     case background = "image"
     case hour = "Hour"
     case minute = "Minute"
+    case theme = "thema"
 }
 
 

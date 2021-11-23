@@ -10,10 +10,9 @@ import UIKit
 
 protocol SettingsProtocol {
     
-    func selectCategories()
-    func selectThemes()
     func notification(alert : UIAlertController)
     func rateUs(rate: UIViewController)
+    func setTheme(color: UIColor)
 }
 
 class SettingsViewController: UITableViewController,SettingsProtocol{
@@ -25,13 +24,15 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
     
     var keepCategories = UserDefaults.standard
     var keepNotification = UserDefaults.standard
+    var keepTheme = UserDefaults.standard
     
     var selectedCategories : [String] = ["Misc","Programming","Dark","Pun","Spooky","Christmas"]
     
     var  sections = [
         Section(title: "Categories", options: ["Misc","Programming","Dark","Pun","Spooky","Christmas"]),
         Section(title: "Themes ", options: ["Dark", "Light"].compactMap({return "\($0) Mode"})),
-        Section(title: "Notifications", options: ["Once a day","Off","Custom"]),
+//        Section(title: "Notifications", options: ["Once a day","Off","Custom"]),
+        Section(title: "Notifications", options: ["Once a day","Off"]),
         Section(title: "Rate Us", options: [])
     ]
     
@@ -44,9 +45,12 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
         if keepCategories.array(forKey: UserDefaultKey.categories.rawValue) != nil{
             selectedCategories = (keepCategories.array(forKey: UserDefaultKey.categories.rawValue) as! [String])
         }
+        if keepTheme.value(forKey: UserDefaultKey.theme.rawValue) == nil {
+            keepTheme.set(Themes.LightMode.rawValue, forKey: UserDefaultKey.theme.rawValue)
+        }
         let datePickerCell = DatePickerCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: nil)
         cells = [datePickerCell]
-        
+                
     }
     
     func setup(){
@@ -60,14 +64,12 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
         interactor.presenter = presenter
         presenter.viewController = viewController
         router.viewController = viewController
+        interactor.checkTheme()
     }
     
-    func selectCategories() {
-        //        <#code#>
-    }
-    
-    func selectThemes() {
-        //        <#code#>
+
+    func setTheme(color: UIColor){
+        view.backgroundColor = color
     }
     
     func notification(alert : UIAlertController) {
@@ -125,11 +127,18 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
                 //Theme Selection
                 if sections[indexPath.section].options[indexPath.row-1] == Themes.DarkMode.rawValue {
                     interactor?.justOneCheckmark(cellType: .Themes, cell: cell, tableView: tableView)
-                    delegate?.chanceThemeClicked(name: "dark.jpg")
+                    delegate?.chanceThemeClicked(color: .black)
+                    keepTheme.set(Themes.DarkMode.rawValue, forKey: UserDefaultKey.theme.rawValue)
+                    view.backgroundColor = .lightGray
+                    tableView.reloadData()
                 }
+                
                 if sections[indexPath.section].options[indexPath.row-1] == Themes.LightMode.rawValue{
                     interactor?.justOneCheckmark(cellType: .Themes, cell: cell, tableView: tableView)
-                    router?.changeBackground(image: "light.jpg")
+                    delegate?.chanceThemeClicked(color: .white)
+                    keepTheme.set(Themes.LightMode.rawValue, forKey: UserDefaultKey.theme.rawValue)
+                    view.backgroundColor = .white
+                    tableView.reloadData()
                 }
                 
 //                Notification Selection
@@ -166,16 +175,28 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.layer.cornerRadius = cell.frame.height / 5
+        cell.textLabel?.textColor = .black
         if indexPath.row == 0
         {
             cell.textLabel?.text = sections[indexPath.section].title
-            cell.backgroundColor = .systemRed
+            if keepTheme.value(forKey: UserDefaultKey.theme.rawValue) as! String == Themes.DarkMode.rawValue {
+                cell.backgroundColor = .darkGray
+            }else{
+                cell.backgroundColor = .systemOrange
+            }
             cell.accessoryType = .none
         }
         else{
             cell.accessoryType = .none
             cell.textLabel?.text = sections[indexPath.section].options[indexPath.row-1]
-            cell.backgroundColor = .cyan
+            if keepTheme.value(forKey: UserDefaultKey.theme.rawValue) as! String == Themes.DarkMode.rawValue {
+                cell.backgroundColor = .gray
+            }
+            else{
+                cell.backgroundColor = .white
+            }
+            
             if sections[indexPath.section].title == MenuList.Categories.rawValue  {
                 let tempList = keepCategories.array(forKey: UserDefaultKey.categories.rawValue)
                 if tempList == nil {
@@ -197,9 +218,12 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
                 cell.accessoryType = .checkmark
                 
             }
-            if sections[indexPath.section].options[indexPath.row-1] == NotificationType.Custom.rawValue{
-                return DatePickerCell()
+            if sections[indexPath.section].options[indexPath.row-1] == keepTheme.value(forKey: UserDefaultKey.theme.rawValue) as! String {
+                cell.accessoryType = .checkmark
             }
+//            if sections[indexPath.section].options[indexPath.row-1] == NotificationType.Custom.rawValue{
+//                return DatePickerCell()
+//            }
         }
         return cell
     }
@@ -208,9 +232,10 @@ class SettingsViewController: UITableViewController,SettingsProtocol{
         
         let cell = self.tableView.cellForRow(at: indexPath)
         
-        if (cell is DatePickerCell) {
-            return (cell as! DatePickerCell).datePickerHeight()
-        }
+//        if (cell is DatePickerCell) {
+//            cell?.backgroundColor = .white
+//            return (cell as! DatePickerCell).datePickerHeight()
+//        }
         
         return super.tableView(tableView, heightForRowAt: indexPath)
     }
